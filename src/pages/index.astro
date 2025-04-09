@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import SearchResultCard from "../components/SearchResultCard.astro";
 import Logo from "../components/Logo.astro";
 import SearchBar from "../components/SearchBar.astro";
+import DetailsPane from "../components/DetailsPane.astro";
+import SearchResultsPane from "../components/SearchResultsPane.astro";
 ---
 
 <Layout>
@@ -14,9 +16,11 @@ import SearchBar from "../components/SearchBar.astro";
         </div>
         <div class="dict-pane">
             <div style="flex:4">
-                <SearchResultCard></SearchResultCard>
+                <SearchResultsPane></SearchResultsPane>
             </div>
-            <span style="flex:6"></span>
+            <div style="flex:6">
+                <DetailsPane></DetailsPane>
+            </div>
         </div>
     </div>
 </Layout>
