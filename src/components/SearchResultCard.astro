@@ -1,0 +1,83 @@
+---
+import Batsu from "./symbols/Batsu.astro";
+import Nijuumaru from "./symbols/Nijuumaru.astro";
+import Maru from "./symbols/Maru.astro";
+import Sankaku from "./symbols/Sankaku.astro";
+import Badge from "./Badge.astro";
+const {} = Astro.props;
+---
+
+<div class="result-card">
+    <h1 class="katakana"><b>ワード</b> (bruh bruh)</h1>
+    <div class="info">
+        <div class="english">
+            <h2 class="origin">
+                <Batsu/>
+                Word
+            </h2>
+            <h2 class="correct-general">
+                <Nijuumaru/>
+                Term
+            </h2>
+        </div>
+        <div class="badges">
+            <Badge color="green">New</Badge>
+            <Badge color="red">Hot</Badge>
+            <Badge color="blue">Update</Badge>
+        </div>
+    </div>
+</div>
+
+<style>
+    .result-card {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 1rem; /* nice round corners */
+        background-color: rgba(255, 255, 255, 0.18);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* soft shadow */
+        padding: 1.5rem;
+        margin: 1rem;
+        transition: background-color 0.2s ease;
+    }
+
+    .result-card:hover {
+        background-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .result-card h2 {
+        margin: 0.5rem;
+    }
+
+    .katakana {
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+        color: floralwhite;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .english {
+    }
+
+    .origin {
+        color: red;
+    }
+
+    .correct-general {
+        color: limegreen;
+    }
+
+    .badges {
+        display: flex;
+        flex-wrap: wrap;
+        align-self: flex-end;
+        justify-content: flex-end;
+        margin-left: 15%;
+    }
+</style>

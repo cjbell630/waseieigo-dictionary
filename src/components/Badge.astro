@@ -1,0 +1,61 @@
+---
+// Badge.astro
+const {color = "teal"} = Astro.props;
+let borderColor = 0;
+---
+
+<span class="badge">
+    <span class="inline-badge-icon" aria-label="comment"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                              viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                              stroke-width="2" stroke-linecap="round"
+                                                              stroke-linejoin="round"
+                                                              class="svg-icon lucide-message-square"><path
+            d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span>
+    <span class="badge-text"><slot/></span>
+</span>
+
+
+<style define:vars={{color, borderColor}}>
+    .badge2 {
+        display: inline-flex;
+        padding: 0;
+        margin: 0;
+        border-radius: 4px;
+        background-color: #141414;
+    }
+
+    .badge {
+        display: inline-flex;
+        padding: 0;
+        margin: 1%;
+        border-radius: 4px;
+        font-size: 21px;
+        line-height: 31.5px;
+        font-weight: 500;
+        text-align: center;
+        border: 1px solid transparent; /*TODO */
+        border-color: rgba(83, 223, 221, 1);
+        color: rgba(83, 223, 221, 1);
+        background-color: rgba(83, 223, 221, 0.177);
+        vertical-align: middle;
+        height: fit-content;
+    }
+
+    .inline-badge-icon {
+        line-height: 31.5px;
+        font-size: 21px;
+        padding: 6.3px;
+        display: flex;
+    }
+
+    .badge-text {
+        display: inline-block;
+        font-size: 0.8em;
+        padding-right: 5px;
+        padding-top: 2px;
+    }
+
+    .badge:hover {
+        opacity: 0.8;
+    }
+</style>
