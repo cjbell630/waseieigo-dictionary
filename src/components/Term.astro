@@ -1,0 +1,34 @@
+---
+import Batsu from "./symbols/Batsu.astro";
+import Sankaku from "./symbols/Sankaku.astro";
+import Nijuumaru from "./symbols/Nijuumaru.astro";
+import Maru from "./symbols/Maru.astro";
+const {evaluation, country} = Astro.props;
+const {class: className, ...rest} = Astro.props;
+---
+
+<h2 class:list={["term", evaluation, className]} {...rest}>
+    {
+        evaluation == "bad" ?
+                <Batsu/> : evaluation == "okay" ?
+                        <Sankaku/> : evaluation == "good" ?
+                                <Maru/> :
+                                <Nijuumaru/>
+    }
+    <slot/>
+    <!-- TODO country flag -->
+</h2>
+
+<style>
+    .bad {
+        color: crimson;
+    }
+
+    .okay {
+        color: orange;
+    }
+
+    .good, .best {
+        color: limegreen;
+    }
+</style>

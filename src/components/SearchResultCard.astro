@@ -5,20 +5,19 @@ import Maru from "./symbols/Maru.astro";
 import Sankaku from "./symbols/Sankaku.astro";
 import Badge from "./Badge.astro";
 import Card from "./Card.astro";
+import Term from "./Term.astro";
 const {} = Astro.props;
 ---
 <Card isClickable>
     <h1 class="katakana"><b>キーホルダー</b></h1>
     <div class="info">
         <div class="english">
-            <h2 class="origin">
-                <Batsu/>
+            <Term evaluation="bad">
                 key holder
-            </h2>
-            <h2 class="correct-general">
-                <Nijuumaru/>
+            </Term>
+            <Term evaluation="best">
                 keychain
-            </h2>
+            </Term>
         </div>
         <div class="badges">
             <Badge color="green">New</Badge>
@@ -29,7 +28,7 @@ const {} = Astro.props;
 </Card>
 
 <style>
-    h2 {
+    .term {
         margin: 0.5rem;
     }
 
@@ -43,17 +42,6 @@ const {} = Astro.props;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-    }
-
-    .english {
-    }
-
-    .origin {
-        color: crimson;
-    }
-
-    .correct-general {
-        color: limegreen;
     }
 
     .badges {
