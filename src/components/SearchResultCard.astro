@@ -4,20 +4,20 @@ import Nijuumaru from "./symbols/Nijuumaru.astro";
 import Maru from "./symbols/Maru.astro";
 import Sankaku from "./symbols/Sankaku.astro";
 import Badge from "./Badge.astro";
+import Card from "./Card.astro";
 const {} = Astro.props;
 ---
-
-<div class="result-card">
-    <h1 class="katakana"><b>ワード</b> (bruh bruh)</h1>
+<Card>
+    <h1 class="katakana"><b>キーホルダー</b></h1>
     <div class="info">
         <div class="english">
             <h2 class="origin">
                 <Batsu/>
-                Word
+                key holder
             </h2>
             <h2 class="correct-general">
                 <Nijuumaru/>
-                Term
+                keychain
             </h2>
         </div>
         <div class="badges">
@@ -26,26 +26,10 @@ const {} = Astro.props;
             <Badge color="blue">Update</Badge>
         </div>
     </div>
-</div>
+</Card>
 
 <style>
-    .result-card {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        border-radius: 1rem; /* nice round corners */
-        background-color: rgba(255, 255, 255, 0.18);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* soft shadow */
-        padding: 1.5rem;
-        margin: 1rem;
-        transition: background-color 0.2s ease;
-    }
-
-    .result-card:hover {
-        background-color: rgba(255, 255, 255, 0.25);
-    }
-
-    .result-card h2 {
+    h2 {
         margin: 0.5rem;
     }
 
@@ -65,7 +49,7 @@ const {} = Astro.props;
     }
 
     .origin {
-        color: red;
+        color: crimson;
     }
 
     .correct-general {
@@ -77,6 +61,6 @@ const {} = Astro.props;
         flex-wrap: wrap;
         align-self: flex-end;
         justify-content: flex-end;
-        margin-left: 15%;
+        margin-left: 0%;
     }
 </style>
