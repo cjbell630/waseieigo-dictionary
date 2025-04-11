@@ -1,9 +1,10 @@
 ---
-
+const {isClickable} = Astro.props;
+const { class: className, ...rest } = Astro.props;
 ---
 
 
-<div class="card">
+<div class:list={["card", {clickable: isClickable}, className]} {...rest}>
     <slot/>
 </div>
 
@@ -17,10 +18,13 @@
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* soft shadow */
         padding: 1.5rem;
         margin: 1rem;
+    }
+
+    .clickable {
         transition: background-color 0.2s ease;
     }
 
-    .card:hover {
+    .clickable:hover {
         background-color: rgba(255, 255, 255, 0.25);
     }
 </style>
