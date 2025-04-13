@@ -2,14 +2,15 @@
 
 ---
 
-
-<label class="search-bar">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-        <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="2" fill="none"/>
-        <line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2"/>
-    </svg>
-    <input type="text" placeholder="Search..."/>
-</label>
+<search-bar>
+    <label class="search-bar">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="2" fill="none"/>
+            <line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <input type="text" placeholder="Search..." id="search-bar"/>
+    </label>
+</search-bar>
 
 <style>
     .search-bar {
@@ -51,3 +52,43 @@
         border-color: rgba(255, 255, 255, 0.5);
     }
 </style>
+
+<script>
+    class SearchBar extends HTMLElement {
+        connectedCallback() {
+            console.log("hello");
+            let oldValue = "";
+            this.addEventListener("input", (e) => {
+                let newValue = e.target.value;
+                console.log(`old: ${oldValue}, new: ${newValue}`);
+                if (oldValue == newValue) {
+                    return
+                }
+                if (newValue == "") { // erased
+                    document.querySelectorAll(".search-result").forEach((value) => {
+                        console.log(value);
+                        value.style.display = "flex";
+                        value.style.visibility = "visible";
+                    });
+                } else {
+                    if (oldValue == "") { // first char
+                        console.log("first char");
+                    }
+                    document.querySelectorAll(".search-result").forEach((value) => {
+                        if (value.id.includes(newValue) || newValue.includes(value.id)) {
+                            value.style.display = "flex";
+                            value.style.visibility = "visible";
+                        } else {
+                            value.style.display = "none";
+                            value.style.visibility = "hidden";
+                        }
+                        console.log(value);
+                    });
+                }
+                oldValue = e.target.value;
+            });
+        }
+    }
+
+    customElements.define("search-bar", SearchBar);
+</script>

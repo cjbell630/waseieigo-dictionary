@@ -5,7 +5,8 @@ import Term from "./Term.astro";
 import BadgeSection from "./BadgeSection.astro";
 const {word, entry} = Astro.props;
 ---
-<Card isClickable>
+
+<Card isClickable class="search-result" id={word}>
     <h1 class="katakana"><b>{word}</b></h1>
     <div class="info">
         <div class="english">
