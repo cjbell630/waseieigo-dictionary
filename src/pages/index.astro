@@ -15,7 +15,7 @@ import SearchResultsPane from "../components/SearchResultsPane.astro";
             <span style="flex:6"></span>
         </div>
         <div class="dict-pane">
-            <div style="flex:4">
+            <div class="search-results-pane">
                 <SearchResultsPane/>
             </div>
             <div style="flex:5">
@@ -26,18 +26,55 @@ import SearchResultsPane from "../components/SearchResultsPane.astro";
 </Layout>
 
 <style>
+    html, body {
+        height: 100%;
+        overflow: hidden;
+    }
+
     .main-content {
         display: flex;
         flex-direction: column;
+        height: 100vh;
     }
 
     .search-bar-row {
         display: flex;
         flex-direction: row;
+        flex: 0 0 auto; /* Don't grow/shrink */
+        padding: 0.5rem;
     }
 
     .dict-pane {
         display: flex;
         flex-direction: row;
+        flex: 1; /* Take up remaining space */
+        overflow: hidden; /* Contain scrollable content */
     }
+
+    .search-results-pane {
+        flex: 4;
+        overflow-y: auto;
+        height: 100%; /* Take up full height of dict-pane */
+    }
+    .search-results-pane::-webkit-scrollbar {
+        width: 0.75em; /* Or height: 6px for horizontal */
+    }
+
+    .search-results-pane::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .search-results-pane::-webkit-scrollbar-thumb {
+        background-color: rgba(255,255,255,0.18);
+        border-radius: 100px;
+        border: 2px solid transparent; /* creates padding around the dot */
+        background-clip: content-box;
+    }
+
+
+    .dict-pane > div:last-child {
+        flex: 5;
+        overflow: hidden; /* Prevents it from pushing size */
+    }
+
 </style>

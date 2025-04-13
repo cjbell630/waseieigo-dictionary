@@ -2,33 +2,34 @@
 import Badge from "./Badge.astro";
 
 const {tags} = Astro.props;
-const colors = {
+const badgeInfo = {
     "not-en": {
-        "color":"teal",
-        "text":"NotEN",
-        "icon":""
+        "color": "teal",
+        "text": "NotEN",
+        "icon": ""
     },
     "clipping": {
-        "color":"blue",
-        "text":"Clipping",
-        "icon":""
+        "color": "blue",
+        "text": "Clipping",
+        "icon": ""
     },
     "nuance": {
-        "color":"yellow",
-        "text":"Nuance",
-        "icon":""
+        "color": "yellow",
+        "text": "Nuance",
+        "icon": ""
     },
     "wtf": {
-        "color":"red",
-        "text":"WTF",
-        "icon":""
+        "color": "red",
+        "text": "WTF",
+        "icon": ""
     }
 };
 ---
 
 
 <div class="badges">
-    {tags.map(tag => (<Badge color={colors[tag].color}>{colors[tag].text}</Badge>))}
+    {tags.map(tag => (
+            <Badge color={badgeInfo[tag].color}>{badgeInfo[tag].text}</Badge>))}
 </div>
 
 <style>
