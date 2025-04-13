@@ -2,24 +2,21 @@
 import Badge from "./Badge.astro";
 import Card from "./Card.astro";
 import Term from "./Term.astro";
-const {} = Astro.props;
+import BadgeSection from "./BadgeSection.astro";
+const {word, entry} = Astro.props;
 ---
 <Card isClickable>
-    <h1 class="katakana"><b>キーホルダー</b></h1>
+    <h1 class="katakana"><b>{word}</b></h1>
     <div class="info">
         <div class="english">
             <Term evaluation="bad">
-                key holder
+                {entry.origins[0].source}
             </Term>
             <Term evaluation="good">
-                keychain
+                {Object.values(entry.facets)[0][0].terms ? Object.values(entry.facets)[0][0].terms[0] : Object.values(entry.facets)[0][0]}
             </Term>
         </div>
-        <div class="badges">
-            <Badge color="green">New</Badge>
-            <Badge color="red">Hot</Badge>
-            <Badge color="blue">Update</Badge>
-        </div>
+        <BadgeSection tags={entry.tags}/>
     </div>
 </Card>
 
@@ -34,13 +31,5 @@ const {} = Astro.props;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-    }
-
-    .badges {
-        display: flex;
-        flex-wrap: wrap;
-        align-self: flex-end;
-        justify-content: flex-end;
-        margin-left: 0%;
     }
 </style>

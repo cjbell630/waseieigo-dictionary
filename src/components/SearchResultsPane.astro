@@ -1,6 +1,10 @@
 ---
 import SearchResultCard from "./SearchResultCard.astro";
+import dictionary from "../../public/data/dictionary.json"
 ---
 
-
-<SearchResultCard></SearchResultCard>
+{Object.entries(dictionary).map(
+    ([word, entry]) =>
+        (
+        <SearchResultCard word={word} entry={entry}/>)
+    )}

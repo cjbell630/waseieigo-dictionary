@@ -1,0 +1,43 @@
+---
+import Badge from "./Badge.astro";
+
+const {tags} = Astro.props;
+const colors = {
+    "not-en": {
+        "color":"teal",
+        "text":"NotEN",
+        "icon":""
+    },
+    "clipping": {
+        "color":"blue",
+        "text":"Clipping",
+        "icon":""
+    },
+    "nuance": {
+        "color":"yellow",
+        "text":"Nuance",
+        "icon":""
+    },
+    "wtf": {
+        "color":"red",
+        "text":"WTF",
+        "icon":""
+    }
+};
+---
+
+
+<div class="badges">
+    {tags.map(tag => (<Badge color={colors[tag].color}>{colors[tag].text}</Badge>))}
+</div>
+
+<style>
+
+    .badges {
+        display: flex;
+        flex-wrap: wrap;
+        align-self: flex-end;
+        justify-content: flex-end;
+        margin-left: 0%;
+    }
+</style>
