@@ -12,8 +12,9 @@ const {class: className, ...rest} = Astro.props;
         evaluation == "bad" ?
                 <Batsu/> : evaluation == "okay" ?
                         <Sankaku/> : evaluation == "good" ?
-                                <Maru/> :
-                                <Nijuumaru/>
+                                <Maru/> : evaluation == "best" ?
+                                        <Nijuumaru/> :
+                                        <></>
     }
     <slot/>
     <!-- TODO country flag -->
@@ -35,4 +36,9 @@ const {class: className, ...rest} = Astro.props;
     .good, .best {
         color: limegreen;
     }
+
+    .neutral {
+        color: floralwhite;
+    }
+
 </style>

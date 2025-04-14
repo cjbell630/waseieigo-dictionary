@@ -25,8 +25,7 @@ const {
     <div class="header-section">
         <div class="term-info">
             <h1 class="katakana"><b>{word}</b><span class="alias-string">{aliasString}</span></h1>
-            <!--TODO should the origin be shown if it's one of the terms??-->
-            <Term evaluation={originEval}>
+            <Term evaluation={correctionNeeded ? originEval : "neutral"}>
                 {originTerm}
             </Term>
         </div>
@@ -37,7 +36,8 @@ const {
         {Object.entries(entry.facets).flatMap(([facetName, facetInfo]) => [
             <h3 class="facet">{facetName}</h3>,
             ...facetInfo.flatMap(facetRegion =>
-                (<Term evaluation="good">{facetRegion.terms.join(", ")}</Term>)
+                (
+                        <Term evaluation="good">{facetRegion.terms.join(", ")}</Term>)
             )
         ])}
     </section>
