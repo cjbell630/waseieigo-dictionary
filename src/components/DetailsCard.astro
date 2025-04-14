@@ -3,34 +3,53 @@ import Card from "./Card.astro";
 import Badge from "./Badge.astro";
 import Term from "./Term.astro";
 import BadgeSection from "./BadgeSection.astro";
+import {processData} from "../scripts/processData";
 const {word, entry} = Astro.props;
+const {
+    aliasString,
+    numDistinctTerms,
+    allTerms,
+    generalTerm,
+    originTerm,
+    originEval,
+    correctionNeeded,
+    correction,
+    correctionEval,
+    hasNotes,
+    hasSources
+} = processData(word, entry);
 ---
 
 
 <Card class="details-card" id={word + "-results"}>
     <div class="header-section">
         <div class="term-info">
-            <h1 class="katakana"><b>{word}</b></h1>
-            <Term evaluation="bad"> <!--TODO actually bad or not-->
-                key holder
+            <h1 class="katakana"><b>{word}</b>{aliasString}</h1>
+            <!--TODO should the origin be shown if it's one of the terms??-->
+            <Term evaluation={originEval}>
+                {originTerm}
             </Term>
         </div>
         <BadgeSection tags={entry.tags}/>
     </div>
     <hr/>
     <section class="facet-section">
-        <h3 class="facet">General Meaning</h3>
-        <Term evaluation="good">
-            keychain
-        </Term>
-        <Term evaluation="good">
-            keyring
-        </Term>
+        {Object.entries(entry.facets).flatMap(([facetName, facetInfo]) => [
+            <h3 class="facet">{facetName}</h3>,
+            ...facetInfo.flatMap(facetRegion =>
+                facetRegion.terms.map(term => (
+                        <Term evaluation="good">{term}</Term>
+                ))
+            )
+        ])}
     </section>
-    <p class="notes">Notes: While these terms are definitely more commonly used in their respective regions, both will
-        absolutely be understood.</p>
-    <hr/>
-    <p class="sources">Sources:<br/><a href="wiktionary.com">Wiktionary</a></p>
+    {hasNotes &&
+            <p class="notes">Notes:<br/>{entry.notes.join("<br/>")}</p>
+    }
+    {
+        hasSources &&     <hr/>
+            <p class="sources">Sources:<br/><a href="wiktionary.com">Wiktionary</a></p>
+    }
     <!-- TODO if there are sources, reduce padding at end -->
     <!-- TODO related terms -->
 </Card>
@@ -38,8 +57,9 @@ const {word, entry} = Astro.props;
 
 <style>
     .details-card {
-        display:none;
+        display: none;
         visibility: hidden;
+        padding-bottom:1.25rem;
     }
 
     .header-section {
@@ -52,7 +72,6 @@ const {word, entry} = Astro.props;
     }
 
     .facet-section {
-        margin-bottom: 0.5em;
     }
 
     .facet-section .term {
@@ -67,7 +86,7 @@ const {word, entry} = Astro.props;
 
     .notes {
         font-size: 0.9em;
-        margin-top: 0;
+        margin-top: 0.5em;
         margin-bottom: 0.5em;
         width: 75%;
         text-wrap: balance;

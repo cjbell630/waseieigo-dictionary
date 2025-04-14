@@ -29,8 +29,8 @@ export function processData(word, entry) {
             // TODO flag
         }
     }
-    console.log(allTerms);
-    console.log(`generalTerm: ${generalTerm}`);
+    let hasNotes = entry.notes.length > 0;
+    let hasSources = Object.values(entry.notes).length > 0;
     console.log(`done processing ${word}`)
     return {
         aliasString,
@@ -42,5 +42,7 @@ export function processData(word, entry) {
         correctionNeeded,
         correction,
         correctionEval,
+        hasNotes,
+        hasSources
     };
 }
