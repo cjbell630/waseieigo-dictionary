@@ -8,6 +8,7 @@ const {evaluation, country} = Astro.props;
 const {class: className, ...rest} = Astro.props;
 ---
 
+<!--TODO version without icon for details pane -->
 <h2 class:list={["term", evaluation, className]} {...rest}>
     {
         evaluation == "bad" ?

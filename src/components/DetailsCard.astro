@@ -48,7 +48,9 @@ const {
     {
         hasSources &&
             <hr/>
-            <p class="sources">Sources:<br/><a href="wiktionary.com">Wiktionary</a></p>
+            <p class="sources">Sources:<br/>{Object.entries(entry.sources).map(([name, url]) =>
+                (<a href={url}>{name}</a>)
+            )}</p>
     }
     <!-- TODO if there are sources, reduce padding at end -->
     <!-- TODO related terms -->

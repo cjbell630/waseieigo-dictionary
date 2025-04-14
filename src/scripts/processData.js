@@ -30,7 +30,7 @@ export function processData(word, entry) {
         }
     }
     let hasNotes = entry.notes.length > 0;
-    let hasSources = Object.values(entry.notes).length > 0;
+    let hasSources = entry.sources && Object.values(entry.sources).length > 0;
     console.log(`done processing ${word}`)
     return {
         aliasString,
