@@ -54,9 +54,11 @@ import SearchResultsPane from "../components/SearchResultsPane.astro";
     }
 
     .search-results-pane {
+        display:flex;
         flex: 4;
-        overflow-y: auto;
+        overflow-y: scroll;
         height: 100%; /* Take up full height of dict-pane */
+        flex-direction: column;
     }
     .search-results-pane::-webkit-scrollbar {
         width: 0.75em; /* Or height: 6px for horizontal */

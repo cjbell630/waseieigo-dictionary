@@ -76,12 +76,17 @@
                         console.log("first char");
                     }
                     document.querySelectorAll(".search-result").forEach((value) => {
-                        if ( // TODO search criteria
-                            value.id.includes(newValue) ||
-                            newValue.includes(value.id)
-                        ) {
+                        let rank = 0;
+                        if (value.id.includes(newValue)) {
+                            rank -= newValue.length;
+                        }
+                        if (newValue.includes(value.id)) {
+                            rank -= value.id.length;
+                        }
+                        if (rank < 0) {
                             value.style.display = "flex";
                             value.style.visibility = "visible";
+                            value.style.order = rank;
                         } else {
                             value.style.display = "none";
                             value.style.visibility = "hidden";
