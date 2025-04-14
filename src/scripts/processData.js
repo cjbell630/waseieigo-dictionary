@@ -2,6 +2,7 @@ export function processData(word, entry) {
 
     console.log(`processing ${word}`)
     let data = {};
+    let aliasString = entry.aliases?.length > 0? ` (${entry.aliases.join(", ")})` : "" ?? "";
     let allTerms = Object.values(entry.facets).flatMap(
         (facetRegions) => {
             return facetRegions.flatMap(regionInfo => {
@@ -32,6 +33,7 @@ export function processData(word, entry) {
     console.log(`generalTerm: ${generalTerm}`);
     console.log(`done processing ${word}`)
     return {
+        aliasString,
         allTerms,
         generalTerm,
         originTerm,
