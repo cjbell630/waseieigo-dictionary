@@ -11,9 +11,11 @@ const {
     allTerms,
     generalTerm,
     originTerm,
+    originFlag,
     originEval,
     correctionNeeded,
     correction,
+    correctionFlag,
     correctionEval
 } = processData(word, entry);
 ---
@@ -25,12 +27,12 @@ const {
         <h1 class="katakana"><b>{word}</b><span class="alias-string">{aliasString}</span></h1>
         <div class="info">
             <div class="english">
-                <Term evaluation={originEval}>
+                <Term evaluation={originEval} country={originFlag}>
                     {originTerm}
                 </Term>
                 {
                     correctionNeeded ? (
-                            <Term evaluation={correctionEval}>
+                            <Term evaluation={correctionEval} country={correctionFlag}>
                                 {correction}
                             </Term>
                     ) : (

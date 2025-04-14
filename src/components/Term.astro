@@ -3,6 +3,7 @@ import Batsu from "./symbols/Batsu.astro";
 import Sankaku from "./symbols/Sankaku.astro";
 import Nijuumaru from "./symbols/Nijuumaru.astro";
 import Maru from "./symbols/Maru.astro";
+import {getFlagEmoji} from "../scripts/flagConversion";
 const {evaluation, country} = Astro.props;
 const {class: className, ...rest} = Astro.props;
 ---
@@ -17,12 +18,27 @@ const {class: className, ...rest} = Astro.props;
                                         <></>
     }
     <slot/>
-    <!-- TODO country flag -->
+    {
+        country && <span class="flag">{getFlagEmoji(country)}</span>
+    }
+
 </h2>
 
 <style>
+    @font-face {
+        font-family: 'TwemojiCountryFlags';
+        src: url("https://cdn.jsdelivr.net/npm/country-flag-emoji-polyfill@0.1/dist/TwemojiCountryFlags.woff2") format('woff2');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
     .term {
         margin: 0.5rem;
+    }
+
+    .flag {
+        font-family: "TwemojiCountryFlags", serif;
     }
 
     .bad {
@@ -40,5 +56,4 @@ const {class: className, ...rest} = Astro.props;
     .neutral {
         color: floralwhite;
     }
-
 </style>

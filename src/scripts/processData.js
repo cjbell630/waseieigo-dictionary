@@ -11,9 +11,9 @@ export function processData(word, entry) {
         }
     );
     console.log(allTerms)
-    let generalTerm = entry.facets.general?.terms?.join(", ") ?? undefined;
+    let generalTerm = entry.facets.general?.at(0)?.terms?.join(", ") ?? undefined;
     let originTerm = entry.origins[0].source;
-    let originFlag; // TODO
+    let originFlag = entry.origins[0].language === "" ? undefined : entry.origins[0].language;
     let originEval = originTerm === generalTerm ? "best" : allTerms.includes(originTerm) ? "good" : "bad";
     let correctionNeeded = !["good", "best"].includes(originEval);
     let correction, correctionEval, correctionFlag;
@@ -25,8 +25,8 @@ export function processData(word, entry) {
             // TODO flag
         } else {
             correction = generalTerm;
-            correctionEval = "best";
-            // TODO flag
+            correctionFlag = entry.facets.general[0].region;
+            correctionEval = correctionFlag === undefined ? "best" : "good";
         }
     }
     let hasNotes = entry.notes.length > 0;
@@ -38,9 +38,11 @@ export function processData(word, entry) {
         allTerms,
         generalTerm,
         originTerm,
+        originFlag,
         originEval,
         correctionNeeded,
         correction,
+        correctionFlag,
         correctionEval,
         hasNotes,
         hasSources
