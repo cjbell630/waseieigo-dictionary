@@ -2,6 +2,7 @@
 import Card from "./Card.astro";
 import Badge from "./Badge.astro";
 import Term from "./Term.astro";
+import BadgeSection from "./BadgeSection.astro";
 const {word, entry} = Astro.props;
 ---
 
@@ -10,15 +11,11 @@ const {word, entry} = Astro.props;
     <div class="header-section">
         <div class="term-info">
             <h1 class="katakana"><b>{word}</b></h1>
-            <Term evaluation="bad">
+            <Term evaluation="bad"> <!--TODO actually bad or not-->
                 key holder
             </Term>
         </div>
-        <div class="badges">
-            <Badge color="green">New</Badge>
-            <Badge color="red">Hot</Badge>
-            <Badge color="blue">Update</Badge>
-        </div>
+        <BadgeSection tags={entry.tags}/>
     </div>
     <hr/>
     <section class="facet-section">

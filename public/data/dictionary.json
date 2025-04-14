@@ -49,7 +49,11 @@
     ],
     "facets": {
       "animation (industry) / short-form animation": [
-        "animation"
+        {
+          "terms": [
+            "animation"
+          ]
+        }
       ],
       "animation (movie or TV series)": [
         {
@@ -60,10 +64,18 @@
         }
       ],
       "2D Western animation, typically marketed at kids": [
-        "cartoon"
+        {
+          "terms": [
+            "cartoon"
+          ]
+        }
       ],
       "Japanese animation": [
-        "anime"
+        {
+          "terms": [
+            "anime"
+          ]
+        }
       ]
     },
     "notes": [

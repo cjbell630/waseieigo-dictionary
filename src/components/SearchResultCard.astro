@@ -2,22 +2,39 @@
 import Badge from "./Badge.astro";
 import Card from "./Card.astro";
 import Term from "./Term.astro";
+import {processData} from "../scripts/processData";
 import BadgeSection from "./BadgeSection.astro";
 const {word, entry} = Astro.props;
+const {
+    allTerms,
+    generalTerm,
+    originTerm,
+    originEval,
+    correctionNeeded,
+    correction,
+    correctionEval
+} = processData(word, entry);
 ---
 
 <!-- TODO make search-result take the hide properties -->
+<!-- TODO update url on click (populate stack) -->
 <search-result data-word={word}>
     <Card isClickable class="search-result" id={word}>
         <h1 class="katakana"><b>{word}</b></h1>
         <div class="info">
             <div class="english">
-                <Term evaluation="bad">
+                <Term evaluation={originEval}>
                     {entry.origins[0].source}
                 </Term>
-                <Term evaluation="good">
-                    {Object.values(entry.facets)[0][0].terms ? Object.values(entry.facets)[0][0].terms[0] : Object.values(entry.facets)[0][0]}
-                </Term>
+                {
+                    correctionNeeded ? (
+                            <Term evaluation={correctionEval}>
+                                {correction}
+                            </Term>
+                    ) : (
+                            <p>3 more</p>
+                    )
+                }
             </div>
             <BadgeSection tags={entry.tags}/>
         </div>
@@ -39,6 +56,12 @@ const {word, entry} = Astro.props;
 </style>
 
 <script>
+    function getPreviewData(entry) {
+        console.log(allTerms);
+        let originIsValid;
+        if (entry) ;
+    }
+
     class SearchResult extends HTMLElement {
         connectedCallback() {
             this.addEventListener("click", (e) => {
