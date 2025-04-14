@@ -6,20 +6,24 @@ import BadgeSection from "./BadgeSection.astro";
 const {word, entry} = Astro.props;
 ---
 
-<Card isClickable class="search-result" id={word}>
-    <h1 class="katakana"><b>{word}</b></h1>
-    <div class="info">
-        <div class="english">
-            <Term evaluation="bad">
-                {entry.origins[0].source}
-            </Term>
-            <Term evaluation="good">
-                {Object.values(entry.facets)[0][0].terms ? Object.values(entry.facets)[0][0].terms[0] : Object.values(entry.facets)[0][0]}
-            </Term>
+<!-- TODO make search-result take the hide properties -->
+<!-- TODO on click -->
+<search-result data-word={word}>
+    <Card isClickable class="search-result" id={word}>
+        <h1 class="katakana"><b>{word}</b></h1>
+        <div class="info">
+            <div class="english">
+                <Term evaluation="bad">
+                    {entry.origins[0].source}
+                </Term>
+                <Term evaluation="good">
+                    {Object.values(entry.facets)[0][0].terms ? Object.values(entry.facets)[0][0].terms[0] : Object.values(entry.facets)[0][0]}
+                </Term>
+            </div>
+            <BadgeSection tags={entry.tags}/>
         </div>
-        <BadgeSection tags={entry.tags}/>
-    </div>
-</Card>
+    </Card>
+</search-result>
 
 <style>
     .katakana {
@@ -34,3 +38,24 @@ const {word, entry} = Astro.props;
         justify-content: space-between;
     }
 </style>
+
+<script>
+    class SearchResult extends HTMLElement {
+        connectedCallback() {
+            this.addEventListener("click", (e) => {
+                //let prevResultsCard = document.querySelector(".details-pane .card[display='flex']");
+                let prevResultsCard = document.querySelector(".details-pane .selected");
+                console.log(prevResultsCard);
+                prevResultsCard.classList.remove("selected");
+                prevResultsCard.style.visibility = "hidden";
+                prevResultsCard.style.display = "none";
+                let newResultsCard = document.querySelector(`#${this.dataset.word}-results`);
+                newResultsCard.classList.add("selected");
+                newResultsCard.style.visibility = "visible";
+                newResultsCard.style.display = "flex";
+            });
+        }
+    }
+
+    customElements.define("search-result", SearchResult);
+</script>

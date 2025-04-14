@@ -9,7 +9,7 @@ import DetailsCard from "./DetailsCard.astro";
 import dictionary from "../../public/data/dictionary.json"
 ---
 <!--TODO add placeholder when none selected -->
-<Card class="placeholder-details-card">
+<Card class="placeholder-results-card selected">
     Click a result to show details
 </Card>
 {
@@ -19,3 +19,10 @@ import dictionary from "../../public/data/dictionary.json"
             <DetailsCard word={word} entry={entry}/>)
         )
     }
+
+<style>
+    .selected {
+        display:flex;
+        visibility: visible;
+    }
+</style>
