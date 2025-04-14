@@ -3,7 +3,6 @@ const {isClickable} = Astro.props;
 const {class: className, ...rest} = Astro.props;
 ---
 
-
 <div class:list={["card", {clickable: isClickable}, className]} {...rest}>
     <slot/>
 </div>
