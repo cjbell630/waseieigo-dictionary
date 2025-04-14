@@ -24,7 +24,7 @@ const {
 <Card class="details-card" id={word + "-results"}>
     <div class="header-section">
         <div class="term-info">
-            <h1 class="katakana"><b>{word}</b>{aliasString}</h1>
+            <h1 class="katakana"><b>{word}</b><span class="alias-string">{aliasString}</span></h1>
             <!--TODO should the origin be shown if it's one of the terms??-->
             <Term evaluation={originEval}>
                 {originTerm}
@@ -47,7 +47,8 @@ const {
             <p class="notes">Notes:<br/>{entry.notes.join("<br/>")}</p>
     }
     {
-        hasSources &&     <hr/>
+        hasSources &&
+            <hr/>
             <p class="sources">Sources:<br/><a href="wiktionary.com">Wiktionary</a></p>
     }
     <!-- TODO if there are sources, reduce padding at end -->
@@ -59,7 +60,7 @@ const {
     .details-card {
         display: none;
         visibility: hidden;
-        padding-bottom:1.25rem;
+        padding-bottom: 1.25rem;
     }
 
     .header-section {
@@ -104,6 +105,11 @@ const {
     }
 
     /* currently copied from SearchResultCard */
+
+    .alias-string {
+        color: darkgrey;
+    }
+
     .katakana {
         margin-bottom: 0.5rem;
         margin-top: 0.5rem;

@@ -22,7 +22,7 @@ const {
 <!-- TODO update url on click (populate stack) -->
 <search-result data-word={word} class="search-result" id={word}>
     <Card isClickable>
-        <h1 class="katakana"><b>{word}</b>{aliasString}</h1>
+        <h1 class="katakana"><b>{word}</b><span class="alias-string">{aliasString}</span></h1>
         <div class="info">
             <div class="english">
                 <Term evaluation={originEval}>
@@ -44,6 +44,10 @@ const {
 </search-result>
 
 <style>
+    .alias-string {
+        color: darkgrey;
+    }
+
     .katakana {
         margin-bottom: 0.5rem;
         margin-top: 0.5rem;
@@ -55,11 +59,13 @@ const {
         flex-direction: row;
         justify-content: space-between;
     }
+
     .search-result {
-        display:flex;
+        display: flex;
     }
+
     .search-result .card {
-        width:100%;
+        width: 100%;
         margin-top: 0;
     }
 </style>
