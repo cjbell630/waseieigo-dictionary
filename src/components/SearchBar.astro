@@ -59,6 +59,7 @@
             console.log("hello");
             let oldValue = "";
             this.addEventListener("input", (e) => {
+                // TODO sort with flex order (assign match strength and set that as order)
                 let newValue = e.target.value;
                 console.log(`old: ${oldValue}, new: ${newValue}`);
                 if (oldValue == newValue) {
@@ -75,7 +76,10 @@
                         console.log("first char");
                     }
                     document.querySelectorAll(".search-result").forEach((value) => {
-                        if (value.id.includes(newValue) || newValue.includes(value.id)) {
+                        if ( // TODO search criteria
+                            value.id.includes(newValue) ||
+                            newValue.includes(value.id)
+                        ) {
                             value.style.display = "flex";
                             value.style.visibility = "visible";
                         } else {

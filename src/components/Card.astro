@@ -1,6 +1,6 @@
 ---
 const {isClickable} = Astro.props;
-const { class: className, ...rest } = Astro.props;
+const {class: className, ...rest} = Astro.props;
 ---
 
 
@@ -26,5 +26,6 @@ const { class: className, ...rest } = Astro.props;
 
     .clickable:hover {
         background-color: rgba(255, 255, 255, 0.25);
+        cursor: pointer;
     }
 </style>
