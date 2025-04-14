@@ -37,9 +37,7 @@ const {
         {Object.entries(entry.facets).flatMap(([facetName, facetInfo]) => [
             <h3 class="facet">{facetName}</h3>,
             ...facetInfo.flatMap(facetRegion =>
-                facetRegion.terms.map(term => (
-                        <Term evaluation="good">{term}</Term>
-                ))
+                (<Term evaluation="good">{facetRegion.terms.join(", ")}</Term>)
             )
         ])}
     </section>
