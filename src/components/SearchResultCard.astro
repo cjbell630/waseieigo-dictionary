@@ -7,6 +7,7 @@ import BadgeSection from "./BadgeSection.astro";
 const {word, entry} = Astro.props;
 const {
     aliasString,
+    numDistinctTerms,
     allTerms,
     generalTerm,
     originTerm,
@@ -33,7 +34,7 @@ const {
                                 {correction}
                             </Term>
                     ) : (
-                            <p>3 more</p>
+                            <p>{numDistinctTerms - 1} more</p><!-- TODO make look nice -->
                     )
                 }
             </div>

@@ -1,10 +1,10 @@
 export function processData(word, entry) {
-
     console.log(`processing ${word}`)
-    let data = {};
-    let aliasString = entry.aliases?.length > 0? ` (${entry.aliases.join(", ")})` : "" ?? "";
+    let aliasString = entry.aliases?.length > 0 ? ` (${entry.aliases.join(", ")})` : "" ?? "";
+    let numDistinctTerms = 0;
     let allTerms = Object.values(entry.facets).flatMap(
         (facetRegions) => {
+            numDistinctTerms++;
             return facetRegions.flatMap(regionInfo => {
                 return regionInfo.terms
             })
@@ -34,6 +34,7 @@ export function processData(word, entry) {
     console.log(`done processing ${word}`)
     return {
         aliasString,
+        numDistinctTerms,
         allTerms,
         generalTerm,
         originTerm,
