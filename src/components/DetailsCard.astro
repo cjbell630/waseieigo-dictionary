@@ -1,0 +1,104 @@
+---
+import Card from "./Card.astro";
+import Badge from "./Badge.astro";
+import Term from "./Term.astro";
+const {word, entry} = Astro.props;
+---
+
+
+<Card class="details-card" id={word + "-results"}>
+    <div class="header-section">
+        <div class="term-info">
+            <h1 class="katakana"><b>キーホルダー</b></h1>
+            <Term evaluation="bad">
+                key holder
+            </Term>
+        </div>
+        <div class="badges">
+            <Badge color="green">New</Badge>
+            <Badge color="red">Hot</Badge>
+            <Badge color="blue">Update</Badge>
+        </div>
+    </div>
+    <hr/>
+    <section class="facet-section">
+        <h3 class="facet">General Meaning</h3>
+        <Term evaluation="good">
+            keychain
+        </Term>
+        <Term evaluation="good">
+            keyring
+        </Term>
+    </section>
+    <p class="notes">Notes: While these terms are definitely more commonly used in their respective regions, both will
+        absolutely be understood.</p>
+    <hr/>
+    <p class="sources">Sources:<br/><a href="wiktionary.com">Wiktionary</a></p>
+    <!-- TODO if there are sources, reduce padding at end -->
+    <!-- TODO related terms -->
+</Card>
+
+
+<style>
+    .details-card {
+        display:none;
+        visibility: hidden;
+    }
+
+    .header-section {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .term {
+        margin-left: 0.25em;
+    }
+
+    .facet-section {
+        margin-bottom: 0.5em;
+    }
+
+    .facet-section .term {
+        margin-left: 0.75em;
+    }
+
+    .facet {
+        color: black;
+        margin-top: 0.25em;
+        margin-bottom: 0.5em;
+    }
+
+    .notes {
+        font-size: 0.9em;
+        margin-top: 0;
+        margin-bottom: 0.5em;
+        width: 75%;
+        text-wrap: balance;
+    }
+
+    hr {
+        width: 100%;
+        border: solid 0.5px lightslategrey;
+    }
+
+    .sources {
+        margin-bottom: 0;
+        margin-top: 0;
+        font-size: 0.7em;
+    }
+
+    /* currently copied from SearchResultCard */
+    .katakana {
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+        color: floralwhite;
+    }
+
+    .badges {
+        display: flex;
+        flex-wrap: wrap;
+        align-self: flex-end;
+        justify-content: flex-end;
+        margin-left: 0%;
+    }
+</style>
