@@ -1,5 +1,4 @@
 ---
-
 ---
 
 <search-bar>
@@ -54,6 +53,7 @@
 </style>
 
 <script>
+    import {convertHiraganaInString, removeFinalConsonants} from "../scripts/japaneseTextCorrection";
     class SearchBar extends HTMLElement {
         connectedCallback() {
             console.log("hello");
@@ -63,7 +63,7 @@
                 let newValue = e.target.value;
                 console.log(`old: ${oldValue}, new: ${newValue}`);
                 if (oldValue == newValue) {
-                    return
+                    return;
                 }
                 if (newValue == "") { // erased
                     document.querySelectorAll(".search-result").forEach((value) => {
@@ -72,15 +72,20 @@
                         value.style.visibility = "visible";
                     });
                 } else {
+                    let newConverted = convertHiraganaInString(newValue);
+                    let newStripped = newConverted;
+                    if(e.isComposing){
+                        newStripped = removeFinalConsonants(newStripped);
+                    }
                     if (oldValue == "") { // first char
                         console.log("first char");
                     }
                     document.querySelectorAll(".search-result").forEach((value) => {
                         let rank = 0;
-                        if (value.id.includes(newValue)) {
-                            rank -= newValue.length;
+                        if (value.id.includes(newStripped)) {
+                            rank -= newStripped.length;
                         }
-                        if (newValue.includes(value.id)) {
+                        if (newStripped.includes(value.id)) {
                             rank -= value.id.length;
                         }
                         if (rank < 0) {
