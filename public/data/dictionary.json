@@ -1,177 +1,296 @@
 {
-  "キーホルダー": {
-    "aliases": [],
-    "tags": [
-      "wtf"
-    ],
-    "origins": [
-      {
-        "source": "key holder",
-        "language": ""
-      }
-    ],
-    "facets": {
-      "general": [
-        {
-          "terms": [
-            "keychain"
-          ],
-          "regions":[ "US"]
+    "キーホルダー": {
+        "aliases": [],
+        "tags": [
+            "wtf"
+        ],
+        "origins": [
+            {
+                "source": "key holder",
+                "language": ""
+            }
+        ],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "keychain"
+                    ],
+                    "regions": [
+                        "US"
+                    ]
+                },
+                {
+                    "terms": [
+                        "keyring"
+                    ],
+                    "regions": [
+                        "gb"
+                    ]
+                }
+            ]
         },
-        {
-          "terms": [
-            "keyring"
-          ],
-          "regions": ["gb"]
+        "notes": [
+            "While these terms are definitely more commonly used in their respective regions, both will absolutely be understood."
+        ],
+        "sources": {
+            "Google Trends": "https://trends.google.com/trends/explore?cat=18&date=all&geo=GB&q=Keychain,keyring,key%20chain,key%20ring&hl=en"
         }
-      ]
     },
-    "notes": [
-      "While these terms are definitely more commonly used in their respective regions, both will absolutely be understood."
-    ],
-    "sources": {
-      "Google Trends": "https://trends.google.com/trends/explore?cat=18&date=all&geo=GB&q=Keychain,keyring,key%20chain,key%20ring&hl=en"
+    "アニメ": {
+        "aliases": [
+            "アニメーション"
+        ],
+        "tags": [
+            "clipping",
+            "nuance"
+        ],
+        "origins": [
+            {
+                "source": "animation",
+                "language": ""
+            }
+        ],
+        "facets": {
+            "animation (industry) / short-form animation": [
+                {
+                    "terms": [
+                        "animation"
+                    ]
+                }
+            ],
+            "animation (movie or TV series)": [
+                {
+                    "terms": [
+                        "animated movie",
+                        "animated series"
+                    ]
+                }
+            ],
+            "2D Western animation, typically marketed at kids": [
+                {
+                    "terms": [
+                        "cartoon"
+                    ]
+                }
+            ],
+            "Japanese animation": [
+                {
+                    "terms": [
+                        "anime"
+                    ]
+                }
+            ]
+        },
+        "notes": []
+    },
+    "バイト": {
+        "aliases": [
+            "アルバイト"
+        ],
+        "tags": [
+            "not-en"
+        ],
+        "origins": [
+            {
+                "source": "Arbeit",
+                "language": "de"
+            }
+        ],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "work",
+                        "part-time job"
+                    ],
+                    "examples": {
+                        "Sorry I can't stay longer, I have to go to work.": "Japanese translation",
+                        "I work at Chili's. It's part-time, so I just work on Tuesdays.": "Japanese Translation"
+                    }
+                }
+            ]
+        },
+        "notes": [
+            "English does not distinguish between \"full-time\" and \"part-time\" work as often as Japanese. Typically native speakers will just say \"work\", unless they need to compare or specify the nature of their position, in which case they could say \"part-time job\"."
+        ],
+        "related": [],
+        "sources": {}
+    },
+    "リップ-スティック": {
+        "aliases": [
+            "リップスティック"
+        ],
+        "tags": [
+            "clipping"
+        ],
+        "direct": {
+            "word": "lip",
+            "meaning": ""
+        },
+        "origins": [
+            {
+                "source": "lipstick",
+                "language": ""
+            }
+        ],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "lipstick"
+                    ]
+                }
+            ]
+        },
+        "related": [
+            "リップ-クリーム"
+        ],
+        "notes": [],
+        "sources": {}
+    },
+    "リップ-クリーム": {
+        "aliases": [
+            "リップクリーム"
+        ],
+        "tags": [
+            "clipping"
+        ],
+        "direct": {
+            "word": "lip, lip cream",
+            "meaning": ""
+        },
+        "origins": [],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "chapstick",
+                        "lip balm"
+                    ]
+                }
+            ]
+        },
+        "related": [
+            "リップ-スティック"
+        ],
+        "notes": [
+            "\"ChapStick\" is a trademark brand name, but it is commonly used to refer to the product by any company."
+        ],
+        "sources": {}
+    },
+    "タッパー": {
+        "aliases": [
+            "タッパーウェア"
+        ],
+        "tags": [
+            "clipping"
+        ],
+        "direct": {
+            "word": "Tupper"
+        },
+        "origins": [
+            {
+                "source": "Tupperware",
+                "language": ""
+            }
+        ],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "Tupperware"
+                    ],
+                    "regions": []
+                }
+            ]
+        },
+        "related": [],
+        "notes": [],
+        "sources": {}
+    },
+    "ソフトクリーム": {
+        "aliases": [],
+        "tags": [
+            "wtf",
+            "clipping"
+        ],
+        "direct": {
+            "word": "soft cream",
+            "meaning": ""
+        },
+        "origins": [],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "soft serve",
+                        "ice cream"
+                    ],
+                    "regions": []
+                }
+            ]
+        },
+        "related": [
+            "アイス"
+        ],
+        "notes": [
+            "Usually referred to as \"ice cream\" unless specifying the type."
+        ],
+        "sources": {}
+    },
+    "ドライヤー": {
+        "aliases": [],
+        "tags": [
+            "clipping"
+        ],
+        "direct": {
+            "word": "dryer",
+            "meaning": ""
+        },
+        "origins": [],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "hair dryer"
+                    ],
+                    "regions": []
+                },
+                {
+                    "terms": [
+                        "blow dryer"
+                    ],
+                    "regions": [
+                        "us"
+                    ]
+                }
+            ]
+        },
+        "related": [],
+        "notes": [],
+        "sources": {}
+    },
+    "インターホン": {
+        "aliases": [],
+        "tags": [],
+        "direct": {
+            "word": "interphone",
+            "meaning": ""
+        },
+        "origins": [],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "intercom"
+                    ],
+                    "regions": []
+                }
+            ]
+        },
+        "related": [],
+        "notes": [],
+        "sources": {}
     }
-  },
-  "アニメ": {
-    "aliases": [
-      "アニメーション"
-    ],
-    "tags": [
-      "clipping",
-      "nuance"
-    ],
-    "origins": [
-      {
-        "source": "animation",
-        "language": ""
-      }
-    ],
-    "facets": {
-      "animation (industry) / short-form animation": [
-        {
-          "terms": [
-            "animation"
-          ]
-        }
-      ],
-      "animation (movie or TV series)": [
-        {
-          "terms": [
-            "animated movie",
-            "animated series"
-          ]
-        }
-      ],
-      "2D Western animation, typically marketed at kids": [
-        {
-          "terms": [
-            "cartoon"
-          ]
-        }
-      ],
-      "Japanese animation": [
-        {
-          "terms": [
-            "anime"
-          ]
-        }
-      ]
-    },
-    "notes": []
-  },
-  "バイト": {
-    "aliases": [
-      "アルバイト"
-    ],
-    "tags": [
-      "not-en"
-    ],
-    "origins": [
-      {
-        "source": "Arbeit",
-        "language": "de"
-      }
-    ],
-    "facets": {
-      "general": [
-        {
-          "terms": [
-            "work",
-            "part-time job"
-          ],
-          "examples": {
-            "Sorry I can't stay longer, I have to go to work.": "Japanese translation",
-            "I work at Chili's. It's part-time, so I just work on Tuesdays.": "Japanese Translation"
-          }
-        }
-      ]
-    },
-    "notes": [
-      "English does not distinguish between \"full-time\" and \"part-time\" work as often as Japanese. Typically native speakers will just say \"work\", unless they need to compare or specify the nature of their position, in which case they could say \"part-time job\"."
-    ],
-    "related": [],
-    "sources": {}
-  },
-  "リップ-スティック": {
-    "aliases": [
-      "リップスティック"
-    ],
-    "tags": [
-      "clipping"
-    ],
-    "origins": [
-      {
-        "source": "lipstick",
-        "language": ""
-      }
-    ],
-    "facets": {
-      "general": [
-        {
-          "terms": [
-            "lipstick"
-          ]
-        }
-      ]
-    },
-    "related": [
-      "リップ-クリーム"
-    ],
-    "notes": [],
-    "sources": {
-    }
-  },
-  "リップ-クリーム": {
-    "aliases": [
-      "リップクリーム"
-    ],
-    "tags": [
-      "clipping"
-    ],
-    "origins": [
-      {
-        "source": "lip cream",
-        "language": ""
-      }
-    ],
-    "facets": {
-      "general": [
-        {
-          "terms": [
-            "chapstick",
-            "lip balm"
-          ]
-        }
-      ]
-    },
-    "related": [
-      "リップ-スティック"
-    ],
-    "notes": [
-      "\"ChapStick\" is a trademark brand name, but it is commonly used to refer to the product by any company."
-    ],
-    "sources": {
-    }
-  }
 }

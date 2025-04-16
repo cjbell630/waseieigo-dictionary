@@ -36,11 +36,12 @@ const {
         </div>
         <hr/>
         <section class="facet-section">
+            <!-- : facetRegion.terms.join(", ") === originTerm ? originEval -->
             {Object.entries(entry.facets).flatMap(([facetName, facetInfo]) => [
                 <h3 class="facet">{facetName}</h3>,
                 ...facetInfo.flatMap(facetRegion =>
                     (
-                            <Term evaluation="good"
+                            <Term evaluation={facetRegion.terms.join(", ") === correction ? correctionEval  : "good"}
                                   countries={facetRegion.regions}>{facetRegion.terms.join(", ")}</Term>)
                 )
             ])}
@@ -122,7 +123,7 @@ const {
     }
 
     .related-terms {
-        display:flex;
+        display: flex;
         flex-direction: row;
     }
 

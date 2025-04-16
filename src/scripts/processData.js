@@ -13,9 +13,18 @@ export function processData(word, entry) {
     );
     console.log(allTerms)
     let generalTerm = entry.facets.general?.at(0)?.terms?.join(", ") ?? undefined;
-    let originTerm = entry.origins[0].source;
-    let originFlags = entry.origins[0].language === "" ? [] : [entry.origins[0].language];
-    let originEval = originTerm === generalTerm ? "best" : allTerms.includes(originTerm) ? "good" : "bad";
+    let originTerm, originFlags, originEval;
+    if (entry.direct) { // if the direct translation is included
+        originTerm = entry.direct.word;
+        originFlags = [];
+        originEval = "bad";
+    } else {
+        originTerm = entry.origins[0].source;
+        originFlags = entry.origins[0].language === "" ? [] : [entry.origins[0].language];
+        originEval = originTerm === generalTerm ? "best" : allTerms.includes(originTerm) ? "good" : "bad";
+    }
+
+
     let correctionNeeded = !["good", "best"].includes(originEval);
     let correction, correctionEval;
     let correctionFlags = [];
@@ -27,11 +36,11 @@ export function processData(word, entry) {
             // TODO flag
         } else {
             correction = generalTerm;
-            if (entry.facets.general[0].regions === undefined) {
-                correctionEval = "best";
-            } else {
+            if (entry.facets.general[0].regions?.length > 0) {
                 correctionFlags = entry.facets.general[0].regions;
                 correctionEval = "good";
+            } else {
+                correctionEval = "best";
             }
         }
     }
