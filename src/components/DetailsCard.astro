@@ -4,6 +4,7 @@ import Badge from "./Badge.astro";
 import Term from "./Term.astro";
 import BadgeSection from "./BadgeSection.astro";
 import {processData} from "../scripts/processData";
+import RelatedTerm from "./RelatedTerm.astro";
 const {word, entry} = Astro.props;
 const {
     printKatakana,
@@ -22,39 +23,50 @@ const {
 } = processData(word, entry);
 ---
 
-
-<Card class="details-card" id={word + "-results"}>
-    <div class="header-section">
-        <div class="term-info">
-            <h1 class="katakana"><b>{printKatakana}</b><span class="alias-string">{aliasString}</span></h1>
-            <Term evaluation={correctionNeeded ? originEval : "neutral"} countries={originFlags}>
-                {originTerm}
-            </Term>
+<div class="details-card" id={word + "-results"}>
+    <Card>
+        <div class="header-section">
+            <div class="term-info">
+                <h1 class="katakana"><b>{printKatakana}</b><span class="alias-string">{aliasString}</span></h1>
+                <Term evaluation={correctionNeeded ? originEval : "neutral"} countries={originFlags}>
+                    {originTerm}
+                </Term>
+            </div>
+            <BadgeSection tags={entry.tags}/>
         </div>
-        <BadgeSection tags={entry.tags}/>
-    </div>
-    <hr/>
-    <section class="facet-section">
-        {Object.entries(entry.facets).flatMap(([facetName, facetInfo]) => [
-            <h3 class="facet">{facetName}</h3>,
-            ...facetInfo.flatMap(facetRegion =>
-                (
-                        <Term evaluation="good" countries={facetRegion.regions}>{facetRegion.terms.join(", ")}</Term>)
-            )
-        ])}
-    </section>
-    {hasNotes &&
-            <p class="notes">Notes:<br/>{entry.notes.join("<br/>")}</p>
-    }
+        <hr/>
+        <section class="facet-section">
+            {Object.entries(entry.facets).flatMap(([facetName, facetInfo]) => [
+                <h3 class="facet">{facetName}</h3>,
+                ...facetInfo.flatMap(facetRegion =>
+                    (
+                            <Term evaluation="good"
+                                  countries={facetRegion.regions}>{facetRegion.terms.join(", ")}</Term>)
+                )
+            ])}
+        </section>
+        {hasNotes &&
+                <p class="notes">Notes:<br/>{entry.notes.join("<br/>")}</p>
+        }
+        {
+            hasSources &&
+                <hr/>
+                <p class="sources">Sources:<br/>{Object.entries(entry.sources).map(([name, url]) =>
+                    (<a href={url}>{name}</a>)
+                )}</p>
+        }
+        <!-- TODO related terms -->
+    </Card>
     {
-        hasSources &&
-            <hr/>
-            <p class="sources">Sources:<br/>{Object.entries(entry.sources).map(([name, url]) =>
-                (<a href={url}>{name}</a>)
-            )}</p>
+        entry.related &&
+
+        (
+                <div class="related-terms">
+                    {entry.related.map(relatedWord => (
+                            <RelatedTerm word={relatedWord} id={relatedWord}></RelatedTerm>))}
+                </div>)
     }
-    <!-- TODO related terms -->
-</Card>
+</div>
 
 
 <style>
@@ -62,6 +74,10 @@ const {
         display: none;
         visibility: hidden;
         padding-bottom: 1.25rem;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 
     .header-section {
@@ -103,6 +119,11 @@ const {
         margin-bottom: 0;
         margin-top: 0;
         font-size: 0.7em;
+    }
+
+    .related-terms {
+        display:flex;
+        flex-direction: row;
     }
 
     /* currently copied from SearchResultCard */

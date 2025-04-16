@@ -1,0 +1,20 @@
+---
+import Card from "./Card.astro";
+import Term from "./Term.astro";
+const {word, targetId} = Astro.props
+---
+
+<Card isClickable>
+    <Term evaluation="neutral">{word}</Term>
+</Card>
+
+<style>
+    h2 {
+        font-size: 1.25em;
+    }
+
+    .card {
+        padding: 0.75em;
+        margin-top: 0em;
+    }
+</style>
