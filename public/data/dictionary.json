@@ -16,13 +16,13 @@
           "terms": [
             "keychain"
           ],
-          "region": "US"
+          "regions":[ "US"]
         },
         {
           "terms": [
             "keyring"
           ],
-          "region": "gb"
+          "regions": ["gb"]
         }
       ]
     },
@@ -112,5 +112,66 @@
     ],
     "related": [],
     "sources": {}
+  },
+  "リップ-スティック": {
+    "aliases": [
+      "リップスティック"
+    ],
+    "tags": [
+      "clipping"
+    ],
+    "origins": [
+      {
+        "source": "lipstick",
+        "language": ""
+      }
+    ],
+    "facets": {
+      "general": [
+        {
+          "terms": [
+            "lipstick"
+          ]
+        }
+      ]
+    },
+    "related": [
+      "リップ-クリーム"
+    ],
+    "notes": [],
+    "sources": {
+    }
+  },
+  "リップ-クリーム": {
+    "aliases": [
+      "リップクリーム"
+    ],
+    "tags": [
+      "clipping"
+    ],
+    "origins": [
+      {
+        "source": "lip cream",
+        "language": ""
+      }
+    ],
+    "facets": {
+      "general": [
+        {
+          "terms": [
+            "chapstick",
+            "lip balm"
+          ]
+        }
+      ]
+    },
+    "related": [
+      "リップ-スティック"
+    ],
+    "notes": [
+      "\"ChapStick\" is a trademark brand name, but it is commonly used to refer to the product by any company."
+    ],
+    "sources": {
+    }
   }
 }

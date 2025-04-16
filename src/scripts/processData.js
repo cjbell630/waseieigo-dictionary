@@ -1,5 +1,6 @@
 export function processData(word, entry) {
     console.log(`processing ${word}`)
+    let printKatakana = word.split('-')[0];
     let aliasString = entry.aliases?.length > 0 ? ` (${entry.aliases.join(", ")})` : "" ?? "";
     let numDistinctTerms = 0;
     let allTerms = Object.values(entry.facets).flatMap(
@@ -38,6 +39,7 @@ export function processData(word, entry) {
     let hasSources = entry.sources && Object.values(entry.sources).length > 0;
     console.log(`done processing ${word}`)
     return {
+        printKatakana,
         aliasString,
         numDistinctTerms,
         allTerms,

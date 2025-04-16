@@ -6,6 +6,7 @@ import BadgeSection from "./BadgeSection.astro";
 import {processData} from "../scripts/processData";
 const {word, entry} = Astro.props;
 const {
+    printKatakana,
     aliasString,
     numDistinctTerms,
     allTerms,
@@ -24,7 +25,7 @@ const {
 <!-- TODO update url on click (populate stack) -->
 <search-result data-word={word} class="search-result" id={word}>
     <Card isClickable>
-        <h1 class="katakana"><b>{word}</b><span class="alias-string">{aliasString}</span></h1>
+        <h1 class="katakana"><b>{printKatakana}</b><span class="alias-string">{aliasString}</span></h1>
         <div class="info">
             <div class="english">
                 <Term evaluation={originEval} countries={originFlags}>
