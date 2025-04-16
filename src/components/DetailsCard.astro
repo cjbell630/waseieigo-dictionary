@@ -11,7 +11,7 @@ const {
     allTerms,
     generalTerm,
     originTerm,
-    originFlag,
+    originFlags,
     originEval,
     correctionNeeded,
     correction,
@@ -26,7 +26,7 @@ const {
     <div class="header-section">
         <div class="term-info">
             <h1 class="katakana"><b>{word}</b><span class="alias-string">{aliasString}</span></h1>
-            <Term evaluation={correctionNeeded ? originEval : "neutral"} country={originFlag}>
+            <Term evaluation={correctionNeeded ? originEval : "neutral"} countries={originFlags}>
                 {originTerm}
             </Term>
         </div>
@@ -38,7 +38,7 @@ const {
             <h3 class="facet">{facetName}</h3>,
             ...facetInfo.flatMap(facetRegion =>
                 (
-                        <Term evaluation="good" country={facetRegion.region}>{facetRegion.terms.join(", ")}</Term>)
+                        <Term evaluation="good" countries={facetRegion.regions}>{facetRegion.terms.join(", ")}</Term>)
             )
         ])}
     </section>
@@ -52,7 +52,6 @@ const {
                 (<a href={url}>{name}</a>)
             )}</p>
     }
-    <!-- TODO if there are sources, reduce padding at end -->
     <!-- TODO related terms -->
 </Card>
 

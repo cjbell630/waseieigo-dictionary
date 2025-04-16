@@ -13,10 +13,11 @@ export function processData(word, entry) {
     console.log(allTerms)
     let generalTerm = entry.facets.general?.at(0)?.terms?.join(", ") ?? undefined;
     let originTerm = entry.origins[0].source;
-    let originFlag = entry.origins[0].language === "" ? undefined : entry.origins[0].language;
+    let originFlags = entry.origins[0].language === "" ? [] : [entry.origins[0].language];
     let originEval = originTerm === generalTerm ? "best" : allTerms.includes(originTerm) ? "good" : "bad";
     let correctionNeeded = !["good", "best"].includes(originEval);
-    let correction, correctionEval, correctionFlag;
+    let correction, correctionEval;
+    let correctionFlags = [];
     if (correctionNeeded) {
         if (generalTerm === undefined) {
             correction = allTerms[1]; // TODO maybe wont always work
@@ -25,8 +26,12 @@ export function processData(word, entry) {
             // TODO flag
         } else {
             correction = generalTerm;
-            correctionFlag = entry.facets.general[0].region;
-            correctionEval = correctionFlag === undefined ? "best" : "good";
+            if (entry.facets.general[0].regions === undefined) {
+                correctionEval = "best";
+            } else {
+                correctionFlags = entry.facets.general[0].regions;
+                correctionEval = "good";
+            }
         }
     }
     let hasNotes = entry.notes.length > 0;
@@ -38,11 +43,11 @@ export function processData(word, entry) {
         allTerms,
         generalTerm,
         originTerm,
-        originFlag,
+        originFlags,
         originEval,
         correctionNeeded,
         correction,
-        correctionFlag,
+        correctionFlags,
         correctionEval,
         hasNotes,
         hasSources

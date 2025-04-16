@@ -11,11 +11,11 @@ const {
     allTerms,
     generalTerm,
     originTerm,
-    originFlag,
+    originFlags,
     originEval,
     correctionNeeded,
     correction,
-    correctionFlag,
+    correctionFlags,
     correctionEval
 } = processData(word, entry);
 ---
@@ -27,12 +27,12 @@ const {
         <h1 class="katakana"><b>{word}</b><span class="alias-string">{aliasString}</span></h1>
         <div class="info">
             <div class="english">
-                <Term evaluation={originEval} country={originFlag}>
+                <Term evaluation={originEval} countries={originFlags}>
                     {originTerm}
                 </Term>
                 {
                     correctionNeeded ? (
-                            <Term evaluation={correctionEval} country={correctionFlag}>
+                            <Term evaluation={correctionEval} countries={correctionFlags}>
                                 {correction}
                             </Term>
                     ) : (
@@ -73,11 +73,6 @@ const {
 </style>
 
 <script>
-    function getPreviewData(entry) {
-        console.log(allTerms);
-        let originIsValid;
-        if (entry) ;
-    }
 
     class SearchResult extends HTMLElement {
         connectedCallback() {

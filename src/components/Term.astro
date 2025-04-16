@@ -4,8 +4,9 @@ import Sankaku from "./symbols/Sankaku.astro";
 import Nijuumaru from "./symbols/Nijuumaru.astro";
 import Maru from "./symbols/Maru.astro";
 import {getFlagEmoji} from "../scripts/flagConversion";
-const {evaluation, country} = Astro.props;
+const {evaluation, countries} = Astro.props;
 const {class: className, ...rest} = Astro.props;
+console.log(`countries: ${countries}`)
 ---
 
 <!--TODO version without icon for details pane -->
@@ -20,7 +21,7 @@ const {class: className, ...rest} = Astro.props;
     }
     <slot/>
     {
-        country && <span class="flag">{getFlagEmoji(country)}</span>
+        countries && countries.map(country => (<span class="flag">{getFlagEmoji(country)}</span>))
     }
 
 </h2>
