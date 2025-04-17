@@ -17,7 +17,9 @@
                         "keychain"
                     ],
                     "regions": [
-                        "US"
+                        "us",
+                        "ca",
+                        "nz"
                     ]
                 },
                 {
@@ -25,7 +27,8 @@
                         "keyring"
                     ],
                     "regions": [
-                        "gb"
+                        "gb",
+                        "au"
                     ]
                 }
             ]
@@ -34,7 +37,7 @@
             "While these terms are definitely more commonly used in their respective regions, both will absolutely be understood."
         ],
         "sources": {
-            "Google Trends": "https://trends.google.com/trends/explore?cat=18&date=all&geo=GB&q=Keychain,keyring,key%20chain,key%20ring&hl=en"
+            "Google Trends": "https://trends.google.com/trends/explore?cat=18&date=all&q=Keychain,keyring,key%20chain,key%20ring&hl=en"
         }
     },
     "アニメ": {
@@ -292,5 +295,149 @@
         "related": [],
         "notes": [],
         "sources": {}
+    },
+    "アプリ": {
+        "aliases": [
+            "アプリケーション"
+        ],
+        "tags": [
+            "clipping"
+        ],
+        "direct": {
+            "word": "appli",
+            "meaning": ""
+        },
+        "origins": [
+            {
+                "source": "application",
+                "language": ""
+            }
+        ],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "app"
+                    ],
+                    "regions": []
+                }
+            ],
+            "computer application": [
+                {
+                    "terms": [
+                        "program",
+                        "application"
+                    ],
+                    "regions": []
+                }
+            ]
+        },
+        "related": [],
+        "notes": [],
+        "sources": {}
+    },
+    "イブ": {
+        "aliases": [],
+        "tags": [
+            "clipping"
+        ],
+        "direct": {
+            "word": "eve",
+            "meaning": "前日、前夜"
+        },
+        "origins": [
+            {
+                "source": "",
+                "language": ""
+            }
+        ],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "Christmas Eve"
+                    ],
+                    "regions": []
+                }
+            ]
+        },
+        "related": [],
+        "notes": [],
+        "sources": {}
+    },
+    "サンド": {
+        "aliases": [
+            "サンドイッチ"
+        ],
+        "tags": [
+            "clipping"
+        ],
+        "direct": {
+            "word": "sand",
+            "meaning": "砂"
+        },
+        "origins": [
+            {
+                "source": "",
+                "language": ""
+            }
+        ],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "sandwich"
+                    ],
+                    "regions": []
+                }
+            ]
+        },
+        "related": [
+            "チキンバーガー"
+        ],
+        "notes": [],
+        "sources": {}
+    },
+    "チキンバーガー": {
+        "aliases": [],
+        "tags": [
+            "regional"
+        ],
+        "origins": [
+            {
+                "source": "chicken burger",
+                "language": ""
+            }
+        ],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "chicken burger"
+                    ],
+                    "regions": [
+                        "gb",
+                        "au",
+                        "nz"
+                    ]
+                },
+                {
+                    "terms": [
+                        "chicken sandwich"
+                    ],
+                    "regions": [
+                        "us",
+                        "ca"
+                    ]
+                }
+            ]
+        },
+        "related": [
+            "サンド"
+        ],
+        "notes": [],
+        "sources": {
+            "Google Trends": "https://trends.google.com/trends/explore?date=all&q=chicken%20sandwich,chicken%20burger&hl=en"
+        }
     }
 }
