@@ -1,17 +1,47 @@
 ---
-// Badge.astro
-const {color = "teal"} = Astro.props;
-let borderColor = 0;
----
+import Speak from "./symbols/Speak.astro";
+import Think from "./symbols/Think.astro";
+const {tag} = Astro.props;
 
+let Component, text, color;
+switch (tag) {
+    case "not-en":
+        Component = Speak;
+        text = "NotEN";
+        color = "aqua";
+        break;
+    case "clipping":
+        Component = Speak;
+        text = "Clipping";
+        color = "blue";
+        break;
+    case "nuance":
+        Component = Think;
+        text = "Nuance";
+        color = "gold";
+        break;
+    case "wtf":
+        Component = Speak;
+        text = "WTF";
+        color = "red";
+        break;
+    case "regional":
+        Component = Speak;
+        text = "Regional";
+        color = "orange";
+        break;
+    case "pronunciation":
+        text = "Pronunciation";
+        Component = Speak;
+        color = "purple";
+        break;
+    default:
+        Component = Speak;
+}
+---
 <span class="badge">
-    <span class="inline-badge-icon" aria-label="comment"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                              viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                              stroke-width="2" stroke-linecap="round"
-                                                              stroke-linejoin="round"
-                                                              class="svg-icon lucide-message-square"><path
-            d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span>
-    <span class="badge-text"><slot/></span>
+    <span class="inline-badge-icon" aria-label="comment"><Component/></span>
+    <span class="badge-text">{text}</span>
 </span>
 
 
@@ -33,10 +63,10 @@ let borderColor = 0;
         line-height: 31.5px;
         font-weight: 500;
         text-align: center;
-        border: 1px solid transparent; /*TODO */
-        border-color: rgba(83, 223, 221, 1);
-        color: rgba(83, 223, 221, 1);
-        background-color: rgba(83, 223, 221, 0.177);
+        border: 2.5px solid transparent; /*TODO */
+        border-color: var(--color);
+        color: var(--color);
+        background-color: color-mix(in srgb, var(--color) 17.7%, transparent);
         vertical-align: middle;
         height: fit-content;
     }
