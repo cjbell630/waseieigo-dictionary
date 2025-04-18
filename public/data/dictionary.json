@@ -248,8 +248,7 @@
             "clipping"
         ],
         "direct": {
-            "word": "dryer",
-            "meaning": ""
+            "word": "dryer"
         },
         "origins": [],
         "facets": {
@@ -272,14 +271,15 @@
         },
         "related": [],
         "notes": [],
-        "sources": {}
+        "sources": {
+            "Google Trends": "https://trends.google.com/trends/explore?date=all&q=hair%20dryer,blow%20dryer,hairdryer,blowdryer&hl=en"
+        }
     },
     "インターホン": {
         "aliases": [],
         "tags": [],
         "direct": {
-            "word": "interphone",
-            "meaning": ""
+            "word": "interphone"
         },
         "origins": [],
         "facets": {
@@ -304,8 +304,7 @@
             "clipping"
         ],
         "direct": {
-            "word": "appli",
-            "meaning": ""
+            "word": "appli"
         },
         "origins": [
             {
@@ -455,18 +454,26 @@
         "facets": {
             "耳飾り": [
                 {
-                    "terms": ["earring","earrings"],
+                    "terms": [
+                        "earring",
+                        "earrings"
+                    ],
                     "regions": []
                 }
             ],
             "耳たぶに小さな穴": [
                 {
-                    "terms": ["piercing","ear piercing"],
+                    "terms": [
+                        "piercing",
+                        "ear piercing"
+                    ],
                     "regions": []
                 }
             ]
         },
-        "related": ["イヤリング"],
+        "related": [
+            "イヤリング"
+        ],
         "notes": [],
         "sources": {}
     },
@@ -484,18 +491,26 @@
         "facets": {
             "耳飾り": [
                 {
-                    "terms": ["earring","earrings"],
+                    "terms": [
+                        "earring",
+                        "earrings"
+                    ],
                     "regions": []
                 }
             ],
             "特に、耳たぶを挟んで装着する耳飾り": [
                 {
-                    "terms": ["clip-ons","clip-on earrings"],
+                    "terms": [
+                        "clip-ons",
+                        "clip-on earrings"
+                    ],
                     "regions": []
                 }
             ]
         },
-        "related": ["ピアス"],
+        "related": [
+            "ピアス"
+        ],
         "notes": [],
         "sources": {}
     }
