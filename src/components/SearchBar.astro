@@ -7,7 +7,7 @@
             <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="2" fill="none"/>
             <line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2"/>
         </svg>
-        <input type="text" placeholder="Search..." id="search-bar" autocomplete="off"/>
+        <input type="text" placeholder="検索" id="search-bar" autocomplete="off"/>
     </label>
 </search-bar>
 
@@ -56,7 +56,6 @@
     import {convertHiraganaInString, removeFinalConsonants} from "../scripts/japaneseTextCorrection";
     class SearchBar extends HTMLElement {
         connectedCallback() {
-            console.log("hello");
             let oldValue = "";
             this.addEventListener("input", (e) => {
                 // TODO sort with flex order (assign match strength and set that as order)
