@@ -13,6 +13,7 @@ const {
     allTerms,
     generalTerm,
     originTerm,
+    originMeaning,
     originFlags,
     originEval,
     correctionNeeded,
@@ -28,9 +29,10 @@ const {
         <div class="header-section">
             <div class="term-info">
                 <h1 class="katakana"><b>{printKatakana}</b><span class="alias-string">{aliasString}</span></h1>
+                <div class="origin-container">
                 <Term evaluation={correctionNeeded ? originEval : "neutral"} countries={originFlags}>
                     {originTerm}
-                </Term>
+                </Term><h2 class="meaning">{originMeaning && "（"+ originMeaning+"）"}</h2></div>
             </div>
             <BadgeSection tags={entry.tags}/>
         </div>
@@ -126,6 +128,15 @@ const {
         display: flex;
         flex-direction: row;
     }
+    .origin-container h2 {
+        display:inline;
+        margin-right:0;
+    }
+    .meaning{
+        color: darkgrey;
+        display:inline;
+    }
+
 
     /* currently copied from SearchResultCard */
 

@@ -13,11 +13,12 @@ export function processData(word, entry) {
     );
     console.log(allTerms)
     let generalTerm = entry.facets.general?.at(0)?.terms?.join(", ") ?? undefined;
-    let originTerm, originFlags, originEval;
+    let originTerm, originMeaning,originFlags, originEval;
     if (entry.direct) { // if the direct translation is included
         originTerm = entry.direct.word;
         originFlags = [];
         originEval = "bad";
+        originMeaning = entry.direct.meaning;
     } else {
         originTerm = entry.origins[0].source;
         originFlags = entry.origins[0].language === "" ? [] : [entry.origins[0].language];
@@ -54,6 +55,7 @@ export function processData(word, entry) {
         allTerms,
         generalTerm,
         originTerm,
+        originMeaning,
         originFlags,
         originEval,
         correctionNeeded,
