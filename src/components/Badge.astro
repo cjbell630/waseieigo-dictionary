@@ -1,72 +1,74 @@
 ---
 import Speak from "./symbols/Speak.astro";
 import Think from "./symbols/Think.astro";
+import NotEN from "./symbols/NotEN.astro";
+import Flag from "./symbols/Flag.astro";
+import Scissors from "./symbols/Scissors.astro";
 const {tag} = Astro.props;
 
-let Component, text, color;
+let Icon, text, color, bgColor;
+
 switch (tag) {
     case "not-en":
-        Component = Speak;
-        text = "NotEN";
+        Icon = NotEN;
+        text = "英語以外の由来";
         color = "aqua";
+        bgColor = "mediumblue";
         break;
     case "clipping":
-        Component = Speak;
-        text = "Clipping";
+        Icon = Scissors;
+        text = "短縮";
         color = "blue";
+        bgColor = "lightcyan";
         break;
     case "nuance":
-        Component = Think;
-        text = "Nuance";
+        Icon = Think;
+        text = "ニュアンス";
         color = "gold";
+        bgColor = "black";
         break;
     case "wtf":
-        Component = Speak;
+        Icon = Speak;
         text = "WTF";
         color = "red";
+        bgColor = "black";
         break;
     case "regional":
-        Component = Speak;
-        text = "Regional";
-        color = "orange";
+        Icon = Flag;
+        text = "方言";
+        color = "darkorange";
+        bgColor = "black";
         break;
     case "pronunciation":
         text = "Pronunciation";
-        Component = Speak;
+        Icon = Speak;
         color = "purple";
+        bgColor = "black";
         break;
     default:
-        Component = Speak;
+        Icon = Speak;
 }
 ---
 <span class="badge">
-    <span class="inline-badge-icon" aria-label="comment"><Component/></span>
+    <span class="inline-badge-icon" aria-label="comment"><Icon/></span>
     <span class="badge-text">{text}</span>
 </span>
 
 
-<style define:vars={{color}}>
-    .badge2 {
-        display: inline-flex;
-        padding: 0;
-        margin: 0;
-        border-radius: 4px;
-        background-color: #141414;
-    }
-
+<style define:vars={{color, bgColor}}>
     .badge {
         display: inline-flex;
         padding: 0;
         margin: 1%;
-        border-radius: 4px;
+        border-radius: 10px;
         font-size: 21px;
         line-height: 31.5px;
         font-weight: 500;
         text-align: center;
-        border: 2.5px solid transparent; /*TODO */
-        border-color: var(--color);
+        border: 2.5px solid var(--color); /*TODO */
         color: var(--color);
-        background-color: color-mix(in srgb, var(--color) 17.7%, transparent);
+        /* if color is light, use black bg, dark then white bg*/
+        background-color: color-mix(in srgb, var(--color) 17.7%, var(--bgColor));
         vertical-align: middle;
         height: fit-content;
     }
@@ -83,6 +85,7 @@ switch (tag) {
         font-size: 0.8em;
         padding-right: 5px;
         padding-top: 2px;
+        width: max-content;
     }
 
     .badge:hover {
