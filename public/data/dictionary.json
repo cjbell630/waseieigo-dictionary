@@ -129,7 +129,7 @@
         ],
         "direct": {
             "word": "lip",
-            "meaning": ""
+            "meaning": "唇"
         },
         "origins": [
             {
@@ -160,8 +160,8 @@
             "clipping"
         ],
         "direct": {
-            "word": "lip, lip cream",
-            "meaning": ""
+            "word": "lip cream, lip",
+            "meaning": "唇"
         },
         "origins": [],
         "facets": {
@@ -439,5 +439,64 @@
         "sources": {
             "Google Trends": "https://trends.google.com/trends/explore?date=all&q=chicken%20sandwich,chicken%20burger&hl=en"
         }
+    },
+    "ピアス": {
+        "aliases": [],
+        "tags": [
+            "clipping",
+            "nuance"
+        ],
+        "direct": {
+            "word": "pierce",
+            "meaning": "刺す"
+        },
+        "origins": [
+        ],
+        "facets": {
+            "耳飾り": [
+                {
+                    "terms": ["earring","earrings"],
+                    "regions": []
+                }
+            ],
+            "耳たぶに小さな穴": [
+                {
+                    "terms": ["piercing","ear piercing"],
+                    "regions": []
+                }
+            ]
+        },
+        "related": ["イヤリング"],
+        "notes": [],
+        "sources": {}
+    },
+    "イヤリング": {
+        "aliases": [],
+        "tags": [
+            "nuance"
+        ],
+        "origins": [
+            {
+                "source": "earring",
+                "language": ""
+            }
+        ],
+        "facets": {
+            "耳飾り": [
+                {
+                    "terms": ["earring","earrings"],
+                    "regions": []
+                }
+            ],
+            "特に、耳たぶを挟んで装着する耳飾り": [
+                {
+                    "terms": ["clip-ons","clip-on earrings"],
+                    "regions": []
+                }
+            ]
+        },
+        "related": ["ピアス"],
+        "notes": [],
+        "sources": {}
     }
 }
