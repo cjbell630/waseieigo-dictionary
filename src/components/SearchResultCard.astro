@@ -75,20 +75,12 @@ const {
 </style>
 
 <script>
+    import {navigateToCard} from "../scripts/navigation.js";
 
     class SearchResult extends HTMLElement {
         connectedCallback() {
             this.addEventListener("click", (e) => {
-                //let prevResultsCard = document.querySelector(".details-pane .card[display='flex']");
-                let prevResultsCard = document.querySelector(".details-pane .selected");
-                console.log(prevResultsCard);
-                prevResultsCard.classList.remove("selected");
-                prevResultsCard.style.visibility = "hidden";
-                prevResultsCard.style.display = "none";
-                let newResultsCard = document.querySelector(`#${this.dataset.word}-results`);
-                newResultsCard.classList.add("selected");
-                newResultsCard.style.visibility = "visible";
-                newResultsCard.style.display = "flex";
+                navigateToCard(this.dataset.word)
             });
         }
     }
