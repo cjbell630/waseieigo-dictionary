@@ -4,10 +4,11 @@ import Term from "./Term.astro";
 const {word, targetId} = Astro.props
 ---
 
-<!-- TODO redirect-->
-<Card isClickable>
-    <Term evaluation="neutral">{word}</Term>
-</Card>
+<related-term data-target={targetId}>
+    <Card isClickable>
+        <Term evaluation="neutral">{word}</Term>
+    </Card>
+</related-term>
 
 <style>
     h2 {
@@ -19,3 +20,19 @@ const {word, targetId} = Astro.props
         margin-top: 0em;
     }
 </style>
+
+<script>
+
+    import {navigateToCard} from "../scripts/navigation.js";
+
+    class RelatedTerm extends HTMLElement {
+        connectedCallback() {
+            this.addEventListener("click", (e) => {
+                console.log(`related word: ${this.dataset.target}`)
+                navigateToCard(this.dataset.target);
+            });
+        }
+    }
+
+    customElements.define("related-term", RelatedTerm);
+</script>
