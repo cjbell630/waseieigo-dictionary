@@ -513,5 +513,171 @@
         ],
         "notes": [],
         "sources": {}
+    },
+    "サーティーワン": {
+        "aliases": [
+            "31"
+        ],
+        "tags": [
+            "wtf"
+        ],
+        "direct": {
+            "word": "31, Thirty-One",
+            "meaning": ""
+        },
+        "origins": [],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "Baskin-Robbins"
+                    ]
+                }
+            ]
+        },
+        "related": [],
+        "notes": [],
+        "sources": {}
+    },
+    "マナーモード": {
+        "aliases": [],
+        "tags": [
+            "wtf"
+        ],
+        "direct": {
+            "word": "manner mode"
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "do not disturb"
+                    ]
+                },
+                {
+                    "terms": [
+                        "silent mode",
+                        "silent"
+                    ]
+                },
+                {
+                    "terms": [
+                        "mute"
+                    ]
+                }
+            ],
+            "マナーモードにする（動詞）": [
+                {
+                    "terms": [
+                        "to put on do not disturb"
+                    ]
+                },
+                {
+                    "terms": [
+                        "to silence",
+                        "to put on silent"
+                    ]
+                },
+                {
+                    "terms": [
+                        "to mute"
+                    ]
+                }
+            ]
+        },
+        "related": [],
+        "notes": [],
+        "sources": {}
+    },
+    "オフボーカル": {
+        "aliases": [],
+        "tags": [
+            "wtf"
+        ],
+        "direct": {
+            "word": "off vocal",
+            "meaning": ""
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "instrumental"
+                    ],
+                    "regions": []
+                }
+            ]
+        },
+        "related": [
+            "オフ"
+        ],
+        "notes": [],
+        "sources": {}
+    },
+    "ホッチキス": {
+        "aliases": [
+            "ホチキス"
+        ],
+        "tags": [
+            "wtf"
+        ],
+        "direct": {
+            "word": "Hotchkiss",
+            "meaning": "人の苗字"
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "stapler"
+                    ]
+                }
+            ]
+        },
+        "related": [],
+        "notes": [],
+        "sources": {}
+    },
+    "ハンドルキーパー": {
+        "aliases": [],
+        "tags": [
+            "wtf"
+        ],
+        "direct": {
+            "word": "handle keeper",
+            "meaning": ""
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": ["designated driver"],
+                    "regions": []
+                }
+            ]
+        },
+        "related": [],
+        "notes": [],
+        "sources": {}
+    },
+    "キッチンカー": {
+        "aliases": [],
+        "tags": [
+            "wtf"
+        ],
+        "direct": {
+            "word": "kitchen car",
+            "meaning": ""
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": ["food truck"],
+                    "regions": []
+                }
+            ]
+        },
+        "related": [],
+        "notes": [],
+        "sources": {}
     }
 }
