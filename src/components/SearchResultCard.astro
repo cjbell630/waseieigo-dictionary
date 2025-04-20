@@ -39,8 +39,7 @@ const {
                                 <Term evaluation={correctionEval} countries={correctionFlags}>
                                     {correction}
                                 </Term>
-                        ) : originEval ==="bad"?(
-                            <!-- TODO make look nice -->
+                        ) : originEval === "bad" ? (
                                 <Term evaluation="neutral">ネイティブの言い方{numDistinctTerms - 1}つ…</Term>
                         ) : (
                                 <Term evaluation="neutral">…他{numDistinctTerms - 1}つ</Term>
@@ -83,13 +82,13 @@ const {
 <script>
     import {navigateToCard} from "../scripts/navigation.js";
 
-    class SearchResult extends HTMLElement {
-        connectedCallback() {
-            this.addEventListener("click", (e) => {
-                navigateToCard(this.dataset.word)
-            });
-        }
-    }
+        class SearchResult extends HTMLElement {
+            connectedCallback() {
+                this.addEventListener("click", (e) => {
+                    navigateToCard(this.dataset.word)
+                });
+            }
+            }
 
-    customElements.define("search-result", SearchResult);
+        customElements.define("search-result", SearchResult);
 </script>

@@ -3,6 +3,7 @@ function getAllTermsOrigin(origin, facets) {
     let originFlags = [];
     let originIsValid = false;
     let originIsGeneral = false;
+    let fullOrigin = [];
     let allTerms = Object.entries(facets).flatMap(
         ([facetName, facetInfo]) => {
             return facetInfo.flatMap(regionInfo => {
@@ -10,6 +11,7 @@ function getAllTermsOrigin(origin, facets) {
                     originFlags = regionInfo.regions ?? [];
                     originIsValid = true;
                     originIsGeneral = facetName === "general";
+                    fullOrigin = regionInfo.terms;
                 } else {
                     numDistinctTerms++;
                 }
@@ -20,7 +22,7 @@ function getAllTermsOrigin(origin, facets) {
     /*if (!allTerms.includes(origin)) {
         numDistinctTerms++;
     }*/
-    return {allTerms, numDistinctTerms, originFlags, originIsValid, originIsGeneral};
+    return {allTerms, numDistinctTerms, originFlags, originIsValid, originIsGeneral, fullOrigin};
 }
 
 function getAllTermsDirect(direct, facets) {
@@ -50,6 +52,7 @@ export function processData(word, entry) {
     let allTerms, numDistinctTerms, originTerm, originMeaning, originFlags, originEval;
     if (entry.direct) { // if the direct translation is included
         originTerm = entry.direct.word;
+        console.log(`direct origin term: ${originTerm}`);
         ({
             allTerms, numDistinctTerms
         } = getAllTermsDirect(originTerm, entry.facets));
@@ -57,26 +60,23 @@ export function processData(word, entry) {
         originEval = "bad";
         originMeaning = entry.direct.meaning;
     } else {
-        originTerm = entry.origins[0].source;
-        let originIsValid, originIsGeneral;
+        let originIsValid, originIsGeneral, fullOrigin;
         ({
-            allTerms, numDistinctTerms, originFlags, originIsValid, originIsGeneral
-        } = getAllTermsOrigin(originTerm, entry.facets));
-        if (originFlags.length === 0 && entry.origins[0].language) {
-            originFlags = [entry.origins[0].language];
-            originEval = "bad";
-        } else {
+            allTerms, numDistinctTerms, originFlags, originIsValid, originIsGeneral, fullOrigin
+        } = getAllTermsOrigin(entry.origins[0].source, entry.facets));
+        if (fullOrigin.length > 0) { // if origin is present in other entries
+            originTerm = fullOrigin.join(", "); // join all other terms in associated line
             originEval = originIsValid ? (
                 /* TODO this is where you'd flag origins as sankaku */
                 originIsGeneral && (originFlags.length === 0 || originFlags.includes("us")) ? "best" : "good"
             ) : "bad";
+        } else { // if origin is not present in other entries
+            originTerm = entry.origins[0].source; // take origin from origins
+            originFlags = [entry.origins[0].language]; // take flags from origins
+            originEval = "bad"; // because it's not present in other entries, it's bad
         }
     }
 
-    console.log(allTerms)
-
-
-    console.log(`origin eval: ${originEval}`)
     let correctionNotNeeded = originEval === "best" || numDistinctTerms === 1;
     let correction, correctionEval;
     let correctionFlags = [];
@@ -84,8 +84,18 @@ export function processData(word, entry) {
         console.log(`generating correction`)
         let firstGeneralTerm = entry.facets.general?.at(0)?.terms?.join(", ") ?? undefined;
         if (firstGeneralTerm === undefined) { // if no "best" term
-            correction = allTerms[1]; // TODO maybe wont always work
-            console.log(`correction thingy: ${allTerms}`)
+            if (numDistinctTerms === 2) {
+                // TODO display one that doesn't equal origin
+                let singleOrigin = originTerm.split(", ")[0];
+                let correctionInfo = Object.values(entry.facets).flat().find(regionInfo => !regionInfo.terms.includes(singleOrigin));
+                correction = correctionInfo.terms.join(", ");
+                correctionFlags = correctionInfo.regions;
+                console.log(`............................................................correction: ${correction}`);
+            } else {
+                // TODO
+            }
+            //correction = allTerms[1]; // TODO maybe wont always work
+            //console.log(`correction thingy: ${allTerms}`)
             correctionEval = "good"; // TODO is this right?
             // TODO flag
         } else {
