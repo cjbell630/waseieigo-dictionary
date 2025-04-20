@@ -34,19 +34,19 @@ const {
                             {firstTerm}
                         </Term>
                 }
-                {
-                    numDistinctTerms > 1 && (
-                        numDistinctTerms === 2 ? (
-                                <Term evaluation={secondTermEval} countries={secondTermFlags}>
-                                    {secondTerm}
-                                </Term>
-                        ) : firstTermEval === "bad" ? (
-                                <Term evaluation="neutral">ネイティブの言い方{numDistinctTerms - 1}つ…</Term>
-                        ) : (
-                                <Term evaluation="neutral">…他{numDistinctTerms - 1}つ</Term>
-                        )
-                    )
-                }
+                <div class="second-term-row">
+                    {
+                        secondTerm &&
+                            <Term evaluation={secondTermEval} countries={secondTermFlags}>
+                                {secondTerm}
+                            </Term>
+                    }
+                    <!-- TODO either change this number or allow multiple terms to be displayed when origin is good -->
+                    {
+                        numDistinctTerms > 2 &&
+                            <Term evaluation="neutral">…他{numDistinctTerms - 2}つ</Term>
+                    }
+                </div>
             </div>
             <BadgeSection tags={entry.tags}/>
         </div>
@@ -78,18 +78,28 @@ const {
         width: 100%;
         margin-top: 0;
     }
+
+    .second-term-row {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .second-term-row > h2.neutral {
+        margin-top: 0;
+        margin-left: 0;
+    }
 </style>
 
 <script>
     import {navigateToCard} from "../scripts/navigation.js";
 
-        class SearchResult extends HTMLElement {
-            connectedCallback() {
-                this.addEventListener("click", (e) => {
-                    navigateToCard(this.dataset.word)
-                });
-            }
-            }
+    class SearchResult extends HTMLElement {
+        connectedCallback() {
+            this.addEventListener("click", (e) => {
+                navigateToCard(this.dataset.word)
+            });
+        }
+    }
 
-        customElements.define("search-result", SearchResult);
+    customElements.define("search-result", SearchResult);
 </script>
