@@ -11,12 +11,11 @@ const {
     aliasString,
     numDistinctTerms,
     allTerms,
-    generalTerm,
     originTerm,
     originMeaning,
     originFlags,
     originEval,
-    correctionNeeded,
+    correctionNotNeeded,
     correction,
     correctionEval,
     hasNotes,
@@ -30,9 +29,11 @@ const {
             <div class="term-info">
                 <h1 class="katakana"><b>{printKatakana}</b><span class="alias-string">{aliasString}</span></h1>
                 <div class="origin-container">
-                <Term evaluation={correctionNeeded ? originEval : "neutral"} countries={originFlags}>
-                    {originTerm}
-                </Term><h2 class="meaning">{originMeaning && "（"+ originMeaning+"）"}</h2></div>
+                    <!-- TODO could put actual eval here with (correctionNotNeeded?"neutral":originEval) and throw in flags too, but maybe this looks better-->
+                    <Term evaluation={originEval === "bad" ? "bad" : "neutral"}>
+                        {originTerm}
+                    </Term>
+                    <h2 class="meaning">{originMeaning && "（" + originMeaning + "）"}</h2></div>
             </div>
             <BadgeSection tags={entry.tags}/>
         </div>
@@ -43,7 +44,7 @@ const {
                 <h3 class="facet">{facetName}</h3>,
                 ...facetInfo.flatMap(facetRegion =>
                     (
-                            <Term evaluation={facetRegion.terms.join(", ") === correction ? correctionEval  : "good"}
+                            <Term evaluation={facetRegion.terms.join(", ") === correction ? correctionEval : "good"}
                                   countries={facetRegion.regions}>{facetRegion.terms.join(", ")}</Term>)
                 )
             ])}
@@ -128,13 +129,15 @@ const {
         display: flex;
         flex-direction: row;
     }
+
     .origin-container h2 {
-        display:inline;
-        margin-right:0;
+        display: inline;
+        margin-right: 0;
     }
-    .meaning{
+
+    .meaning {
         color: darkgrey;
-        display:inline;
+        display: inline;
     }
 
 

@@ -10,11 +10,10 @@ const {
     aliasString,
     numDistinctTerms,
     allTerms,
-    generalTerm,
     originTerm,
     originFlags,
     originEval,
-    correctionNeeded,
+    correctionNotNeeded,
     correction,
     correctionFlags,
     correctionEval
@@ -28,17 +27,24 @@ const {
         <h1 class="katakana"><b>{printKatakana}</b><span class="alias-string">{aliasString}</span></h1>
         <div class="info">
             <div class="english">
-                {originTerm&&
-                    <Term evaluation={originEval} countries={originFlags}>
-                        {originTerm}
-                    </Term>}
                 {
-                    correctionNeeded ? (
-                            <Term evaluation={correctionEval} countries={correctionFlags}>
-                                {correction}
-                            </Term>
-                    ) : (
-                            <Term evaluation="neutral">... + {numDistinctTerms - 1} more</Term><!-- TODO make look nice -->
+                    originTerm &&
+                        <Term evaluation={originEval} countries={originFlags}>
+                            {originTerm}
+                        </Term>
+                }
+                {
+                    numDistinctTerms > 1 && (
+                        numDistinctTerms === 2 ? (
+                                <Term evaluation={correctionEval} countries={correctionFlags}>
+                                    {correction}
+                                </Term>
+                        ) : originEval ==="bad"?(
+                            <!-- TODO make look nice -->
+                                <Term evaluation="neutral">相当する英単語{numDistinctTerms - 1}つ…</Term>
+                        ) : (
+                                <Term evaluation="neutral">…他{numDistinctTerms - 1}つ</Term>
+                        )
                     )
                 }
             </div>
