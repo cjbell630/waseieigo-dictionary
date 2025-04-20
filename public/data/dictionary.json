@@ -4,12 +4,9 @@
         "tags": [
             "wtf"
         ],
-        "origins": [
-            {
-                "source": "key holder",
-                "language": ""
-            }
-        ],
+        "direct": {
+            "word": "key holder"
+        },
         "facets": {
             "general": [
                 {
