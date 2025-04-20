@@ -4,6 +4,7 @@ import Think from "./symbols/Think.astro";
 import NotEN from "./symbols/NotEN.astro";
 import Flag from "./symbols/Flag.astro";
 import Scissors from "./symbols/Scissors.astro";
+import Batsu from "./symbols/Batsu.astro";
 const {tag} = Astro.props;
 
 let Icon, text, color, bgColor;
@@ -28,8 +29,8 @@ switch (tag) {
         bgColor = "black";
         break;
     case "wtf":
-        Icon = Speak;
-        text = "WTF";
+        Icon = Batsu;
+        text = "ガチ和製英語";
         color = "red";
         bgColor = "black";
         break;
@@ -40,13 +41,52 @@ switch (tag) {
         bgColor = "black";
         break;
     case "pronunciation":
-        text = "Pronunciation";
+        text = "発音注意";
+        Icon = Speak;
+        color = "purple";
+        bgColor = "black";
+        break;
+    case "abnormal":
+        text = "伝わるけど変";
+        Icon = Speak;
+        color = "purple";
+        bgColor = "black";
+        break;
+    case "possibly":
+        text = "伝わるかも";
+        Icon = Speak;
+        color = "purple";
+        bgColor = "black";
+        break;
+    case "diff-meaning":
+        text = "全然違う意味";
+        Icon = Speak;
+        color = "purple";
+        bgColor = "black";
+        break;
+    case "offensive":
+        text = "卑語";
+        Icon = Speak;
+        color = "purple";
+        bgColor = "black";
+        break;
+    case "jp-only":
+        text = "対応英語がない";
+        Icon = Speak;
+        color = "purple";
+        bgColor = "black";
+        break;
+    case "tense":
+        text = "変化注意";
         Icon = Speak;
         color = "purple";
         bgColor = "black";
         break;
     default:
+        text = "?";
         Icon = Speak;
+        color = "black";
+        bgColor = "white";
 }
 ---
 <span class="badge">
@@ -68,7 +108,7 @@ switch (tag) {
         border: 2.5px solid var(--color); /*TODO */
         color: var(--color);
         /* if color is light, use black bg, dark then white bg*/
-        background-color: color-mix(in srgb, var(--color) 17.7%, var(--bgColor));
+        background-color: color-mix(in srgb, var(--color) 17.7%, transparent);
         vertical-align: middle;
         height: fit-content;
     }
