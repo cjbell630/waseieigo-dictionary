@@ -15,7 +15,7 @@ const {
     firstTermMeaning,
     firstTermFlags,
     firstTermEval,
-    secondTermNotNeeded,
+    correctionNotNeeded,
     secondTerm,
     secondTermFlags,
     secondTermEval,
@@ -30,7 +30,7 @@ const {
             <div class="term-info">
                 <h1 class="katakana"><b>{printKatakana}</b><span class="alias-string">{aliasString}</span></h1>
                 <div class="origin-container">
-                    <!-- TODO could put actual eval here with (secondTermNotNeeded?"neutral":firstTermEval) and throw in flags too, but maybe this looks better-->
+                    <!-- TODO could put actual eval here with (correctionNotNeeded?"neutral":firstTermEval) and throw in flags too, but maybe this looks better-->
                     <Term evaluation={firstTermEval === "bad" ? "bad" : "neutral"}>
                         {firstTerm}
                     </Term>
