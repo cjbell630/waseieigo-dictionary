@@ -49,63 +49,63 @@ export function processData(word, entry) {
     let printKatakana = word.split('-')[0];
     let aliasString = entry.aliases?.length > 0 ? ` (${entry.aliases.join(", ")})` : "" ?? "";
 
-    let allTerms, numDistinctTerms, originTerm, originMeaning, originFlags, originEval;
+    let allTerms, numDistinctTerms, firstTerm, firstTermMeaning, firstTermFlags, firstTermEval;
     if (entry.direct) { // if the direct translation is included
-        originTerm = entry.direct.word;
-        console.log(`direct origin term: ${originTerm}`);
+        firstTerm = entry.direct.word;
+        console.log(`direct first term: ${firstTerm}`);
         ({
             allTerms, numDistinctTerms
-        } = getAllTermsDirect(originTerm, entry.facets));
-        originFlags = [];
-        originEval = "bad";
-        originMeaning = entry.direct.meaning;
+        } = getAllTermsDirect(firstTerm, entry.facets));
+        firstTermFlags = [];
+        firstTermEval = "bad";
+        firstTermMeaning = entry.direct.meaning;
     } else {
         let originIsValid, originIsGeneral, fullOrigin;
         ({
-            allTerms, numDistinctTerms, originFlags, originIsValid, originIsGeneral, fullOrigin
+            allTerms, numDistinctTerms, originFlags: firstTermFlags, originIsValid, originIsGeneral, fullOrigin
         } = getAllTermsOrigin(entry.origins[0].source, entry.facets));
         if (fullOrigin.length > 0) { // if origin is present in other entries
-            originTerm = fullOrigin.join(", "); // join all other terms in associated line
-            originEval = originIsValid ? (
+            firstTerm = fullOrigin.join(", "); // join all other terms in associated line
+            firstTermEval = originIsValid ? (
                 /* TODO this is where you'd flag origins as sankaku */
-                originIsGeneral && (originFlags.length === 0 || originFlags.includes("us")) ? "best" : "good"
+                originIsGeneral && (firstTermFlags.length === 0 || firstTermFlags.includes("us")) ? "best" : "good"
             ) : "bad";
         } else { // if origin is not present in other entries
-            originTerm = entry.origins[0].source; // take origin from origins
-            originFlags = [entry.origins[0].language]; // take flags from origins
-            originEval = "bad"; // because it's not present in other entries, it's bad
+            firstTerm = entry.origins[0].source; // take origin from origins
+            firstTermFlags = [entry.origins[0].language]; // take flags from origins
+            firstTermEval = "bad"; // because it's not present in other entries, it's bad
         }
     }
 
-    let correctionNotNeeded = originEval === "best" || numDistinctTerms === 1;
-    let correction, correctionEval;
-    let correctionFlags = [];
+    let correctionNotNeeded = firstTermEval === "best" || numDistinctTerms === 1;
+    let secondTerm, secondTermEval;
+    let secondTermFlags = [];
     if (!correctionNotNeeded) {
         console.log(`generating correction`)
         let firstGeneralTerm = entry.facets.general?.at(0)?.terms?.join(", ") ?? undefined;
         if (firstGeneralTerm === undefined) { // if no "best" term
             if (numDistinctTerms === 2) {
                 // TODO display one that doesn't equal origin
-                let singleOrigin = originTerm.split(", ")[0];
+                let singleOrigin = firstTerm.split(", ")[0];
                 let correctionInfo = Object.values(entry.facets).flat().find(regionInfo => !regionInfo.terms.includes(singleOrigin));
-                correction = correctionInfo.terms.join(", ");
-                correctionFlags = correctionInfo.regions;
-                console.log(`............................................................correction: ${correction}`);
+                secondTerm = correctionInfo.terms.join(", ");
+                secondTermFlags = correctionInfo.regions;
+                console.log(`............................................................correction: ${secondTerm}`);
             } else {
                 // TODO
             }
-            //correction = allTerms[1]; // TODO maybe wont always work
-            //console.log(`correction thingy: ${allTerms}`)
-            correctionEval = "good"; // TODO is this right?
+            //secondTerm = allTerms[1]; // TODO maybe wont always work
+            //console.log(`secondTerm thingy: ${allTerms}`)
+            secondTermEval = "good"; // TODO is this right?
             // TODO flag
         } else {
-            let generalIndex = firstGeneralTerm === originTerm ? 1 : 0;
-            correction = entry.facets.general[generalIndex].terms?.join(", ") ?? undefined;
+            let generalIndex = firstGeneralTerm === firstTerm ? 1 : 0;
+            secondTerm = entry.facets.general[generalIndex].terms?.join(", ") ?? undefined;
             if (entry.facets.general[generalIndex].regions?.length > 0) {
-                correctionFlags = entry.facets.general[generalIndex].regions;
-                correctionEval = "good";
+                secondTermFlags = entry.facets.general[generalIndex].regions;
+                secondTermEval = "good";
             } else {
-                correctionEval = "best";
+                secondTermEval = "best";
             }
         }
     }
@@ -118,14 +118,14 @@ export function processData(word, entry) {
         aliasString,
         numDistinctTerms,
         allTerms,
-        originTerm,
-        originMeaning,
-        originFlags,
-        originEval,
+        firstTerm,
+        firstTermMeaning,
+        firstTermFlags,
+        firstTermEval,
         correctionNotNeeded,
-        correction,
-        correctionFlags,
-        correctionEval,
+        secondTerm,
+        secondTermFlags,
+        secondTermEval,
         hasNotes,
         hasSources
     };

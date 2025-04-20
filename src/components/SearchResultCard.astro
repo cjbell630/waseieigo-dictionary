@@ -10,13 +10,14 @@ const {
     aliasString,
     numDistinctTerms,
     allTerms,
-    originTerm,
-    originFlags,
-    originEval,
-    correctionNotNeeded,
-    correction,
-    correctionFlags,
-    correctionEval
+    firstTerm,
+    firstTermMeaning,
+    firstTermFlags,
+    firstTermEval,
+    secondTermNotNeeded,
+    secondTerm,
+    secondTermFlags,
+    secondTermEval,
 } = processData(word, entry);
 ---
 
@@ -28,18 +29,18 @@ const {
         <div class="info">
             <div class="english">
                 {
-                    originTerm &&
-                        <Term evaluation={originEval} countries={originFlags}>
-                            {originTerm}
+                    firstTerm &&
+                        <Term evaluation={firstTermEval} countries={firstTermFlags}>
+                            {firstTerm}
                         </Term>
                 }
                 {
                     numDistinctTerms > 1 && (
                         numDistinctTerms === 2 ? (
-                                <Term evaluation={correctionEval} countries={correctionFlags}>
-                                    {correction}
+                                <Term evaluation={secondTermEval} countries={secondTermFlags}>
+                                    {secondTerm}
                                 </Term>
-                        ) : originEval === "bad" ? (
+                        ) : firstTermEval === "bad" ? (
                                 <Term evaluation="neutral">ネイティブの言い方{numDistinctTerms - 1}つ…</Term>
                         ) : (
                                 <Term evaluation="neutral">…他{numDistinctTerms - 1}つ</Term>
