@@ -9,4 +9,7 @@ export function navigateToCard(cardId) {
     newResultsCard.classList.add("selected");
     newResultsCard.style.visibility = "visible";
     newResultsCard.style.display = "flex";
+
+    // TODO for now we're doing this
+    document.documentElement.style.setProperty('--test', '0');
 }

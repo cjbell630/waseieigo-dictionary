@@ -48,7 +48,7 @@ const {
                     }
                 </div>
             </div>
-            <BadgeSection tags={entry.tags}/>
+            <BadgeSection tags={entry.tags} class="search-result-badges"/>
         </div>
     </Card>
 </search-result>
@@ -75,8 +75,8 @@ const {
     }
 
     .search-result .card {
-        width: 100%;
         margin-top: 0;
+        min-width: -webkit-fill-available;
     }
 
     .second-term-row {
@@ -87,6 +87,23 @@ const {
     .second-term-row > h2.neutral {
         margin-top: 0;
         margin-left: 0;
+    }
+
+    /* PORTRAIT ONLY */
+    @media (orientation: portrait) {
+        .info {
+            flex-direction: column;
+        }
+
+        .second-term-row {
+            flex-direction: column;
+        }
+
+        .search-result-badges {
+            align-self: flex-start;
+            justify-content: flex-start;
+            width: -webkit-fill-available;
+        }
     }
 </style>
 

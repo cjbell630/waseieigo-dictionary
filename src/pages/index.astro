@@ -5,14 +5,16 @@ import Logo from "../components/Logo.astro";
 import SearchBar from "../components/SearchBar.astro";
 import DetailsPane from "../components/DetailsPane.astro";
 import SearchResultsPane from "../components/SearchResultsPane.astro";
+import UIButton from "../components/UIButton.astro";
 ---
 
 <Layout>
     <div class="main-content">
         <Logo/>
         <div class="search-bar-row">
-            <span style="flex:4"><SearchBar/></span>
-            <span style="flex:6"></span>
+            <span class="search-bar-span"><SearchBar/></span>
+            <span style="flex:1"></span>
+            <span style="flex:5"></span>
         </div>
         <div class="dict-pane">
             <div class="search-results-pane">
@@ -28,6 +30,10 @@ import SearchResultsPane from "../components/SearchResultsPane.astro";
 <!--TODO set search results pane flex column reverse-->
 
 <style>
+    :root {
+        --test: 4;
+    }
+
     html, body {
         height: 100%;
         overflow: hidden;
@@ -44,6 +50,12 @@ import SearchResultsPane from "../components/SearchResultsPane.astro";
         flex-direction: row;
         flex: 0 0 auto; /* Don't grow/shrink */
         padding: 0.5rem;
+        align-items: center;
+    }
+
+    .search-bar-span {
+        flex: 4;
+        max-width: -webkit-fill-available;
     }
 
     .dict-pane {
@@ -80,6 +92,22 @@ import SearchResultsPane from "../components/SearchResultsPane.astro";
     .dict-pane > div:last-child {
         flex: 5;
         overflow: hidden; /* Prevents it from pushing size */
+    }
+
+    /* PORTRAIT ONLY */
+    @media (orientation: portrait) {
+        .details-pane {
+            max-width: fit-content;
+        }
+
+        .search-results-pane {
+            flex: var(--test);
+            margin-right: calc(var(--test) * 0.5%);
+        }
+
+        .search-bar-span {
+            flex: var(--test);
+        }
     }
 
 </style>
