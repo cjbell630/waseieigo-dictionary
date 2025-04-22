@@ -24,7 +24,7 @@ const {
 <!-- TODO make search-result take the hide properties -->
 <search-result data-word={word} class="search-result" id={word}>
     <Card isClickable>
-        <h1 class="katakana"><b>{printKatakana}</b><span class="alias-string">{aliasString}</span></h1>
+        <h1 class="katakana"><b>{printKatakana}</b><br/><span class="alias-string">{aliasString}</span></h1>
         <div class="info">
             <div class="english">
                 {
@@ -55,6 +55,7 @@ const {
 <style>
     .alias-string {
         color: darkgrey;
+        vertical-align: text-bottom;
     }
 
     .katakana {
@@ -88,8 +89,25 @@ const {
         margin-left: 0;
     }
 
+    .katakana br {
+        display: none;
+    }
+
     /* PORTRAIT ONLY */
     @media (orientation: portrait) {
+        .katakana {
+            line-height: 1em;
+            margin-bottom: 0;
+        }
+
+        .katakana br {
+            display: inline;
+        }
+
+        .alias-string {
+            font-size: 0.7em;
+        }
+
         .info {
             flex-direction: column;
         }
