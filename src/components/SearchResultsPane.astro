@@ -3,10 +3,42 @@ import SearchResultCard from "./SearchResultCard.astro";
 import dictionary from "../../public/data/dictionary.json"
 ---
 
-{
-    Object.entries(dictionary).map(
-        ([word, entry]) =>
-            (
-            <SearchResultCard word={word} entry={entry}/>)
+<search-results-pane>
+    {
+        Object.entries(dictionary).map(
+            ([word, entry]) => (
+                    <SearchResultCard word={word} entry={entry}/>
+            )
         )
     }
+</search-results-pane>
+
+<script>
+
+    import {navigateToCard} from "../scripts/navigation";
+
+    class SearchResultsPane extends HTMLElement {
+        connectedCallback() {
+            const params = new Proxy(new URLSearchParams(window.location.search), {
+                get: (searchParams, prop) => searchParams.get(prop),
+            });
+            if (params.term) {
+                console.log(`term=${params.term}`)
+                navigateToCard(params.term, false);
+            }
+
+            window.addEventListener("popstate", (event) => {
+                navigateToCard(event.state?.term ?? "placeholder", false);
+            });
+            /*
+            this.addEventListener("onload", (e) => {
+                const params = new Proxy(new URLSearchParams(window.location.search), {
+                    get: (searchParams, prop) => searchParams.get(prop),
+                });
+                console.log(`term=${params.term}`)
+            });*/
+        }
+    }
+
+    customElements.define("search-results-pane", SearchResultsPane);
+</script>
