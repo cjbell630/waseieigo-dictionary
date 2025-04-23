@@ -45,19 +45,22 @@ const {
             {Object.entries(entry.facets).flatMap(([facetName, facetInfo]) => [
                 <h3 class="facet">{facetName}</h3>,
                 ...facetInfo.flatMap(facetRegion =>
-                    (
-                            <Term evaluation={facetRegion.terms.join(", ") === secondTerm ? secondTermEval : "good"}
-                                  countries={facetRegion.regions}>{facetRegion.terms.join(", ")}</Term>)
+                    [
+                        <Term evaluation={facetRegion.terms.join(", ") === secondTerm ? secondTermEval : "good"}
+                              countries={facetRegion.regions}>{facetRegion.terms.join(", ")}</Term>,
+                        facetRegion.examples && Object.entries(facetRegion.examples).map(([jp, en]) =>
+                                <p class="example">"{en}"<br/>("{jp}")</p>)
+                    ]
                 )
             ])}
         </section>
         {hasNotes &&
-                <p class="notes">Notes:<br/>{entry.notes.join("<br/>")}</p>
+                <p class="notes">注釈:<br/>{entry.notes.join("<br/>")}</p>
         }
         {
             hasSources &&
                 <hr/>
-                <p class="sources">Sources:<br/>{Object.entries(entry.sources).map(([name, url]) =>
+                <p class="sources">出典:<br/>{Object.entries(entry.sources).map(([name, url]) =>
                     (<a href={url}>{name}</a>)
                 )}</p>
         }
@@ -65,9 +68,9 @@ const {
     </Card>
     {
         entry.related &&
-
         (
                 <div class="related-terms">
+                    関連単語/関連項目
                     {entry.related.map(relatedWord => (
                             <RelatedTerm word={relatedWord} targetId={relatedWord}></RelatedTerm>))}
                 </div>)
@@ -140,6 +143,12 @@ const {
     .meaning {
         color: darkgrey;
         display: inline;
+    }
+
+    .example {
+        font-size: small;
+        margin: 0 0 0 4em;
+        line-height: 1em;
     }
 
     /* PORTRAIT ONLY */
