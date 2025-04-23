@@ -64,8 +64,8 @@ const {
         {
             hasSources &&
                 <hr/>
-                <p class="sources">出典:<br/>{Object.entries(entry.sources).map(([name, url]) =>
-                    (<a href={url}>{name}</a>)
+                <p class="sources">出典:{Object.entries(entry.sources).map(([name, url]) =>
+                    (<br/><a href={url}>{name}</a>)
                 )}</p>
         }
         <!-- TODO related terms -->
