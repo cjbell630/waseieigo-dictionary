@@ -663,5 +663,280 @@
                 }
             ]
         }
+    },
+    "メイク": {
+        "aliases": [
+            "メイクアップ"
+        ],
+        "tags": [
+            "clipping",
+            "diff-meaning"
+        ],
+        "direct": {
+            "word": "make",
+            "meaning": "作る"
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "makeup"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/5/58/En-us-makeup.ogg"
+                }
+            ]
+        }
+    },
+    "ノート-紙": {
+        "aliases": [
+            "ノートブック"
+        ],
+        "tags": [
+            "clipping",
+            "diff-meaning"
+        ],
+        "direct": {
+            "word": "note",
+            "meaning": "手記"
+        },
+        "facets": {
+            "物を書き控えておくための帳面": [
+                {
+                    "terms": [
+                        "notebook"
+                    ]
+                },
+                {
+                    "terms": [
+                        "notepad"
+                    ]
+                }
+            ]
+        },
+        "related": [
+            "ノート-パソコン"
+        ]
+    },
+    "ノート-パソコン": {
+        "aliases": [
+            "ノートパソコン"
+        ],
+        "tags": [
+            "wtf",
+            "diff-meaning"
+        ],
+        "direct": {
+            "word": "note",
+            "meaning": "手記"
+        },
+        "facets": {
+            "本の形状をしたパソコン": [
+                {
+                    "terms": [
+                        "laptop"
+                    ]
+                }
+            ]
+        },
+        "related": [
+            "ノート-紙"
+        ]
+    },
+    "ピエロ": {
+        "tags": [
+            "not-en"
+        ],
+        "origins": [
+            {
+                "source": "Pierrot",
+                "language": "fr"
+            }
+        ],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "clown"
+                    ]
+                }
+            ]
+        },
+        "sources": {
+            "Wiktionary": "https://en.wiktionary.org/wiki/%E3%83%94%E3%82%A8%E3%83%AD#Japanese"
+        }
+    },
+    "ピンセット": {
+        "aliases": [],
+        "tags": [
+            "not-en"
+        ],
+        "origins": [
+            {
+                "source": "pincet",
+                "language": "nl"
+            }
+        ],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "tweezers"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/c/cc/En-us-tweezers.ogg"
+                }
+            ]
+        },
+        "sources": {
+            "Wiktionary": "https://en.wiktionary.org/wiki/%E3%83%94%E3%83%B3%E3%82%BB%E3%83%83%E3%83%88"
+        }
+    },
+    "ゴム-物質": {
+        "tags": [
+            "not-en"
+        ],
+        "origins": [
+            {
+                "source": "gom",
+                "language": "nl"
+            }
+        ],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "rubber"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/9/9f/En-us-rubber.ogg"
+                }
+            ]
+        },
+        "related": [
+            "消しゴム",
+            "ヘアゴム",
+            "ゴム-コンドーム"
+        ],
+        "sources": {
+            "Wiktionary": "https://en.wiktionary.org/wiki/%E3%82%B4%E3%83%A0"
+        }
+    },
+    "消しゴム": {
+        "tags": [
+            "not-en"
+        ],
+        "origins": [
+            {
+                "source": "gom",
+                "language": "nl"
+            }
+        ],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "eraser"
+                    ],
+                    "regions": [
+                        "us",
+                        "ca",
+                        "ph"
+                    ]
+                },
+                {
+                    "terms": [
+                        "rubber"
+                    ],
+                    "regions": [
+                        "gb",
+                        "au",
+                        "nz",
+                        "in"
+                    ]
+                }
+            ]
+        },
+        "related": [
+            "ゴム-物質",
+            "ヘアゴム",
+            "ゴム-コンドーム"
+        ],
+        "notes": [
+            "In the US and Canada, \"a rubber\" means \"a condom\", so please be careful."
+        ],
+        "sources": {
+            "Wiktionary - 消しゴム": "https://en.wiktionary.org/wiki/%E6%B6%88%E3%81%97%E3%82%B4%E3%83%A0#Japanese",
+            "Wiktionary - rubber": "https://en.wiktionary.org/wiki/rubber#English",
+            "Wiktionary - eraser": "https://en.wiktionary.org/wiki/eraser#English"
+        }
+    },
+    "ヘアゴム": {
+        "tags": [
+            "wtf",
+            "not-en"
+        ],
+        "direct": {
+            "word": "hair gom",
+            "meaning": ""
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "hair tie"
+                    ]
+                },
+                {
+                    "terms": [
+                        "scrunchie"
+                    ]
+                }
+            ]
+        },
+        "related": [
+            "ゴム-物質",
+            "消しゴム",
+            "ゴム-コンドーム"
+        ]
+    },
+    "ゴム-コンドーム": {
+        "aliases": [
+            "コンドーム"
+        ],
+        "tags": [
+            "not-en"
+        ],
+        "origins": [
+            {
+                "source": "gom",
+                "language": "nl"
+            }
+        ],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "condom"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/4/47/En-us-condom.ogg"
+                },
+                {
+                    "terms": [
+                        "rubber"
+                    ],
+                    "regions": [
+                        "us",
+                        "ca"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/9/9f/En-us-rubber.ogg"
+                }
+            ]
+        },
+        "related": [
+            "ゴム-物質",
+            "消しゴム",
+            "ヘアゴム"
+        ],
+        "sources": {
+            "Wiktionary - rubber": "https://en.wiktionary.org/wiki/rubber#English"
+        }
     }
 }
