@@ -17,7 +17,8 @@
                         "us",
                         "ca",
                         "nz"
-                    ]
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/8/8c/En-us-keychain.ogg"
                 },
                 {
                     "terms": [
@@ -26,7 +27,8 @@
                     "regions": [
                         "gb",
                         "au"
-                    ]
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/9/99/LL-Q1860_%28eng%29-Naomi_Persephone_Amethyst_%28NaomiAmethyst%29-keyring.wav"
                 }
             ]
         },
@@ -56,7 +58,8 @@
                 {
                     "terms": [
                         "animation"
-                    ]
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/5/58/En-us-animation.ogg"
                 }
             ],
             "animation (movie or TV series)": [
@@ -71,14 +74,16 @@
                 {
                     "terms": [
                         "cartoon"
-                    ]
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/b/be/En-us-cartoon.ogg"
                 }
             ],
             "Japanese animation": [
                 {
                     "terms": [
                         "anime"
-                    ]
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/9/90/En-us-anime.ogg"
                 }
             ]
         },
@@ -140,7 +145,8 @@
                 {
                     "terms": [
                         "lipstick"
-                    ]
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/b/b1/En-us-lipstick.ogg"
                 }
             ]
         },
@@ -203,13 +209,10 @@
                     "terms": [
                         "Tupperware"
                     ],
-                    "regions": []
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/8/81/LL-Q1860_%28eng%29-Flame%2C_not_lame-Tupperware.wav"
                 }
             ]
-        },
-        "related": [],
-        "notes": [],
-        "sources": {}
+        }
     },
     "ソフトクリーム": {
         "aliases": [],
@@ -228,8 +231,7 @@
                     "terms": [
                         "soft serve",
                         "ice cream"
-                    ],
-                    "regions": []
+                    ]
                 }
             ]
         },
@@ -238,25 +240,21 @@
         ],
         "notes": [
             "Usually referred to as \"ice cream\" unless specifying the type."
-        ],
-        "sources": {}
+        ]
     },
     "ドライヤー": {
-        "aliases": [],
         "tags": [
             "clipping"
         ],
         "direct": {
             "word": "dryer"
         },
-        "origins": [],
         "facets": {
             "general": [
                 {
                     "terms": [
                         "hair dryer"
-                    ],
-                    "regions": []
+                    ]
                 },
                 {
                     "terms": [
@@ -268,15 +266,14 @@
                 }
             ]
         },
-        "related": [],
-        "notes": [],
         "sources": {
             "Google Trends": "https://trends.google.com/trends/explore?date=all&q=hair%20dryer,blow%20dryer,hairdryer,blowdryer&hl=en"
         }
     },
     "インターホン": {
-        "aliases": [],
-        "tags": [],
+        "tags": [
+            "possibly"
+        ],
         "direct": {
             "word": "interphone"
         },
@@ -286,14 +283,10 @@
                 {
                     "terms": [
                         "intercom"
-                    ],
-                    "regions": []
+                    ]
                 }
             ]
-        },
-        "related": [],
-        "notes": [],
-        "sources": {}
+        }
     },
     "アプリ": {
         "aliases": [
@@ -307,32 +300,28 @@
         },
         "origins": [
             {
-                "source": "application",
-                "language": ""
+                "source": "application"
             }
         ],
         "facets": {
-            "general": [
+            "スマホなどのソフト": [
                 {
                     "terms": [
                         "app"
                     ],
-                    "regions": []
-                }
-            ],
-            "computer application": [
-                {
-                    "terms": [
-                        "program",
-                        "application"
-                    ],
-                    "regions": []
+                    "examples": {
+                        "iPadアプリを作るのがこんなに大変だとは思ってもみなかった。": "I never thought it'd be this hard to create an iPad app."
+                    },
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/8/85/En-us-app.ogg"
                 }
             ]
         },
-        "related": [],
-        "notes": [],
-        "sources": {}
+        "related": [
+            "ソフト"
+        ],
+        "notes": [
+            "\"app\"は、ほとんどモバイルデバイスで使用されるソフトを指します。パソコンソフトの場合は、\"program\"や\"application\"などがよく使われています。"
+        ]
     },
     "イブ": {
         "aliases": [],
@@ -343,25 +332,16 @@
             "word": "eve",
             "meaning": "前日、前夜"
         },
-        "origins": [
-            {
-                "source": "",
-                "language": ""
-            }
-        ],
+        "origins": [],
         "facets": {
             "general": [
                 {
                     "terms": [
                         "Christmas Eve"
-                    ],
-                    "regions": []
+                    ]
                 }
             ]
-        },
-        "related": [],
-        "notes": [],
-        "sources": {}
+        }
     },
     "サンド": {
         "aliases": [
@@ -375,27 +355,20 @@
             "word": "sand",
             "meaning": "砂"
         },
-        "origins": [
-            {
-                "source": "",
-                "language": ""
-            }
-        ],
+        "origins": [],
         "facets": {
             "general": [
                 {
                     "terms": [
                         "sandwich"
                     ],
-                    "regions": []
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/f/f0/En-us-sandwich.ogg"
                 }
             ]
         },
         "related": [
             "チキンバーガー"
-        ],
-        "notes": [],
-        "sources": {}
+        ]
     },
     "チキンバーガー": {
         "aliases": [],
@@ -418,7 +391,8 @@
                         "gb",
                         "au",
                         "nz"
-                    ]
+                    ],
+                    "audio": "https://s3.eu-west-1.amazonaws.com/com.idmgroup.oed100.sounds.prod/mp3/c/ch/chi/chicken_burger_1_gb_1.mp3"
                 },
                 {
                     "terms": [
@@ -434,7 +408,6 @@
         "related": [
             "サンド"
         ],
-        "notes": [],
         "sources": {
             "Google Trends": "https://trends.google.com/trends/explore?date=all&q=chicken%20sandwich,chicken%20burger&hl=en"
         }
@@ -457,8 +430,7 @@
                     "terms": [
                         "earring",
                         "earrings"
-                    ],
-                    "regions": []
+                    ]
                 }
             ],
             "耳たぶに小さな穴": [
@@ -466,21 +438,19 @@
                     "terms": [
                         "piercing",
                         "ear piercing"
-                    ],
-                    "regions": []
+                    ]
                 }
             ]
         },
         "related": [
             "イヤリング"
-        ],
-        "notes": [],
-        "sources": {}
+        ]
     },
     "イヤリング": {
         "aliases": [],
         "tags": [
-            "nuance"
+            "nuance",
+            "tense"
         ],
         "origins": [
             {
@@ -494,8 +464,7 @@
                     "terms": [
                         "earring",
                         "earrings"
-                    ],
-                    "regions": []
+                    ]
                 }
             ],
             "特に、耳たぶを挟んで装着する耳飾り": [
@@ -503,8 +472,7 @@
                     "terms": [
                         "clip-ons",
                         "clip-on earrings"
-                    ],
-                    "regions": []
+                    ]
                 }
             ]
         },
@@ -534,10 +502,7 @@
                     ]
                 }
             ]
-        },
-        "related": [],
-        "notes": [],
-        "sources": {}
+        }
     },
     "マナーモード": {
         "aliases": [],
@@ -558,12 +523,14 @@
                     "terms": [
                         "silent mode",
                         "silent"
-                    ]
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/6/6b/En-us-silent.ogg"
                 },
                 {
                     "terms": [
                         "mute"
-                    ]
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/3/31/En-us-mute.ogg"
                 }
             ],
             "マナーモードにする（動詞）": [
@@ -584,13 +551,9 @@
                     ]
                 }
             ]
-        },
-        "related": [],
-        "notes": [],
-        "sources": {}
+        }
     },
     "オフボーカル": {
-        "aliases": [],
         "tags": [
             "wtf"
         ],
@@ -603,16 +566,13 @@
                 {
                     "terms": [
                         "instrumental"
-                    ],
-                    "regions": []
+                    ]
                 }
             ]
         },
         "related": [
             "オフ"
-        ],
-        "notes": [],
-        "sources": {}
+        ]
     },
     "ホッチキス": {
         "aliases": [
@@ -633,10 +593,7 @@
                     ]
                 }
             ]
-        },
-        "related": [],
-        "notes": [],
-        "sources": {}
+        }
     },
     "ハンドルキーパー": {
         "aliases": [],
@@ -652,8 +609,7 @@
                 {
                     "terms": [
                         "designated driver"
-                    ],
-                    "regions": []
+                    ]
                 }
             ]
         },
@@ -676,12 +632,36 @@
                     "terms": [
                         "food truck"
                     ],
-                    "regions": []
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/5/54/LL-Q1860_%28eng%29-Flame%2C_not_lame-food_truck.wav"
                 }
             ]
+        }
+    },
+    "CM": {
+        "aliases": [
+            "コマーシャルメッセージ"
+        ],
+        "tags": [
+            "wtf"
+        ],
+        "direct": {
+            "word": "CM"
         },
-        "related": [],
-        "notes": [],
-        "sources": {}
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "ad",
+                        "advertisement"
+                    ]
+                },
+                {
+                    "terms": [
+                        "commercial"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/f/fa/En-us-commercial.ogg"
+                }
+            ]
+        }
     }
 }
