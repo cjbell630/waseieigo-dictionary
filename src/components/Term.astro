@@ -4,7 +4,8 @@ import Sankaku from "./symbols/Sankaku.astro";
 import Nijuumaru from "./symbols/Nijuumaru.astro";
 import Maru from "./symbols/Maru.astro";
 import {getFlagEmoji} from "../scripts/flagConversion";
-const {evaluation, countries} = Astro.props;
+import AudioButton from "./AudioButton.astro";
+const {evaluation, countries, audio} = Astro.props;
 const {class: className, ...rest} = Astro.props;
 console.log(`countries: ${countries}`)
 ---
@@ -23,7 +24,8 @@ console.log(`countries: ${countries}`)
     {
         countries && countries.map(country => (<span class="flag" title={country}>{getFlagEmoji(country)}</span>))
     }
-
+    {audio &&
+            <AudioButton path={audio}/>}
 </h2>
 
 <style>

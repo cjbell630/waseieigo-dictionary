@@ -1,8 +1,9 @@
 ---
 const {path} = Astro.props;
+const {class: className, ...rest} = Astro.props;
 ---
 
-<audio-button>
+<audio-button class:list={[className]} {...rest}>
     <audio class="audio-source" src={path}></audio>
 
     <!-- Use an emoji or your own SVG/icon font -->
@@ -20,12 +21,25 @@ const {path} = Astro.props;
         background: none;
         border: none;
         cursor: pointer;
-        font-size: 2rem;
         color: #444;
+        font-size: 1.25em;
+        margin: 0;
+        padding: 0;
+        line-height: 0em;
+        vertical-align: middle;
     }
 
     .audio-button-icon:hover {
         color: #000;
+    }
+
+
+    /* PORTRAIT ONLY */
+    @media (orientation: portrait) {
+        .audio-button-icon {
+            font-size: 1em;
+            padding-left: 0.25em;
+        }
     }
 </style>
 <script>

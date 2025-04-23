@@ -49,9 +49,8 @@ const {
                     [
                         <div class="term-row">
                             <Term evaluation={facetRegion.terms.join(", ") === secondTerm ? secondTermEval : "good"}
-                                  countries={facetRegion.regions}>{facetRegion.terms.join(", ")}</Term>
-                            {facetRegion.audio &&
-                                    <AudioButton path={facetRegion.audio}/>}
+                                  countries={facetRegion.regions}
+                                  audio={facetRegion.audio}>{facetRegion.terms.join(", ")}</Term>
                         </div>,
                         facetRegion.examples && Object.entries(facetRegion.examples).map(([jp, en]) =>
                                 <p class="example">"{en}"<br/>("{jp}")</p>)
