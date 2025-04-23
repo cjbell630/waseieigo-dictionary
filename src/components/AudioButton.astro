@@ -1,0 +1,49 @@
+---
+const {path} = Astro.props;
+---
+
+<audio-button>
+    <audio class="audio-source" src={path}></audio>
+
+    <!-- Use an emoji or your own SVG/icon font -->
+    <button class="audio-button-icon" aria-label="Play or pause audio">
+        🔈
+    </button>
+</audio-button>
+
+<style>
+    .audio-source {
+        visibility: hidden;
+    }
+
+    .audio-button-icon {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 2rem;
+        color: #444;
+    }
+
+    .audio-button-icon:hover {
+        color: #000;
+    }
+</style>
+<script>
+    class AudioButton extends HTMLElement {
+        connectedCallback() {
+            let playing = false;
+            let audio = this.getElementsByClassName("audio-source")[0];
+            this.getElementsByClassName("audio-button-icon")[0].addEventListener("click", (e) => {
+                if (!playing) {
+                    audio.play();
+                    playing = true;
+                }
+            });
+            audio.addEventListener("ended", e => {
+                playing = false;
+            });
+        }
+    }
+
+    customElements.define("audio-button", AudioButton);
+</script>

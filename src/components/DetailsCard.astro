@@ -5,6 +5,7 @@ import Term from "./Term.astro";
 import BadgeSection from "./BadgeSection.astro";
 import {processData} from "../scripts/processData";
 import RelatedTerm from "./RelatedTerm.astro";
+import AudioButton from "./AudioButton.astro";
 const {word, entry} = Astro.props;
 const {
     printKatakana,
@@ -46,8 +47,12 @@ const {
                 <h3 class="facet">{facetName}</h3>,
                 ...facetInfo.flatMap(facetRegion =>
                     [
-                        <Term evaluation={facetRegion.terms.join(", ") === secondTerm ? secondTermEval : "good"}
-                              countries={facetRegion.regions}>{facetRegion.terms.join(", ")}</Term>,
+                        <div class="term-row">
+                            <Term evaluation={facetRegion.terms.join(", ") === secondTerm ? secondTermEval : "good"}
+                                  countries={facetRegion.regions}>{facetRegion.terms.join(", ")}</Term>
+                            {facetRegion.audio &&
+                                    <AudioButton path={facetRegion.audio}/>}
+                        </div>,
                         facetRegion.examples && Object.entries(facetRegion.examples).map(([jp, en]) =>
                                 <p class="example">"{en}"<br/>("{jp}")</p>)
                     ]
@@ -149,6 +154,11 @@ const {
         font-size: small;
         margin: 0 0 0 4em;
         line-height: 1em;
+    }
+
+    .term-row {
+        display: flex;
+        flex-direction: row;
     }
 
     /* PORTRAIT ONLY */
