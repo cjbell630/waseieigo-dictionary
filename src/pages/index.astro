@@ -29,7 +29,8 @@ import UIButton from "../components/UIButton.astro";
 
 <style>
     :root {
-        --test: 4;
+        --card-open: 4;
+        --card-open-word: "";
     }
 
     html, body {
@@ -60,37 +61,46 @@ import UIButton from "../components/UIButton.astro";
         display: flex;
         flex-direction: row;
         flex: 1; /* Take up remaining space */
-        overflow: hidden; /* Contain scrollable content */
     }
+
 
     .search-results-pane {
         display: flex;
         flex: 4;
-        overflow-y: scroll;
         height: 100%; /* Take up full height of dict-pane */
         flex-direction: column;
     }
-
-    .search-results-pane::-webkit-scrollbar {
-        width: 0.75em; /* Or height: 6px for horizontal */
-    }
-
-    .search-results-pane::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
-    .search-results-pane::-webkit-scrollbar-thumb {
-        background-color: rgba(255, 255, 255, 0.18);
-        border-radius: 100px;
-        border: 2px solid transparent; /* creates padding around the dot */
-        background-clip: content-box;
-    }
-
-
+/*
     .dict-pane > div:last-child {
         flex: 5;
-        overflow: hidden; /* Prevents it from pushing size */
+        overflow: hidden;Prevents it from pushing size
+    }*/
+
+    /* LANDSCAPE ONLY */
+    @media (orientation: landscape) {
+        .dict-pane{
+            overflow-x: hidden; /* Contain scrollable content */
+        }
+        .search-results-pane {
+            overflow-y: scroll;
+        }
+
+        .search-results-pane::-webkit-scrollbar {
+            width: 0.75em; /* Or height: 6px for horizontal */
+        }
+
+        .search-results-pane::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .search-results-pane::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.18);
+            border-radius: 100px;
+            border: 2px solid transparent; /* creates padding around the dot */
+            background-clip: content-box;
+        }
     }
+
 
     /* PORTRAIT ONLY */
     @media (orientation: portrait) {
@@ -99,12 +109,36 @@ import UIButton from "../components/UIButton.astro";
         }
 
         .search-results-pane {
-            flex: var(--test);
-            margin-right: calc(var(--test) * 0.5%);
+            flex: var(--card-open);
+            display: var(--card-open-word);
         }
 
         .search-bar-span {
-            flex: var(--test);
+            flex: var(--card-open);
+            display: var(--card-open-word);
+        }
+        /* SCROLLING */
+        .dict-pane {
+            overflow-y: scroll;
+            overflow-x: hidden;
+            margin-right: 1.5vw;
+        }
+        .search-results-pane {
+        }
+
+        .dict-pane::-webkit-scrollbar {
+            width: 0.75em; /* Or height: 6px for horizontal */
+        }
+
+        .dict-pane::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .dict-pane::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.18);
+            border-radius: 100px;
+            border: 2px solid transparent; /* creates padding around the dot */
+            background-clip: content-box;
         }
     }
 

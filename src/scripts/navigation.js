@@ -11,7 +11,8 @@ function navigateToCardParams(cardId, newVisibility, newDisplay, newFlex, update
     newResultsCard.style.display = newDisplay;
 
     // TODO for now we're doing this
-    document.documentElement.style.setProperty('--test', newFlex);
+    document.documentElement.style.setProperty('--card-open', newFlex[0]);
+    document.documentElement.style.setProperty('--card-open-word', newFlex[1]);
     if (updateURL) {
         //document.getElementById("content").innerHTML = response.html;
         //document.title = response.pageTitle;
@@ -22,11 +23,11 @@ function navigateToCardParams(cardId, newVisibility, newDisplay, newFlex, update
 
 export function navigateToCard(cardId, updateURL = true) {
     if (cardId === "placeholder") {
-        navigateToCardParams(cardId, "", "", "4", updateURL);
+        navigateToCardParams(cardId, "", "", ["4",""], updateURL);
     } else {
         navigateToCardParams(
             cardId, "visible", "flex",
-            "0", updateURL, {"term": cardId},
+            ["0","none"], updateURL, {"term": cardId},
             `/?term=${cardId}`
         );
     }
