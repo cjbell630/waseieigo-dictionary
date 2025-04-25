@@ -10,7 +10,7 @@ import DictPane from "../components/DictPane.astro";
 ---
 
 <Layout>
-    <div class="layout">
+    <div class="content-container">
         <header>
             <Logo/>
             <div class="search-bar-row">
@@ -34,7 +34,7 @@ import DictPane from "../components/DictPane.astro";
     }
 
 
-    .layout {
+    .content-container {
         display: flex;
         flex-direction: column;
     }
@@ -74,7 +74,7 @@ import DictPane from "../components/DictPane.astro";
             overflow-x: hidden;
         }
 
-        .layout {
+        .content-container {
             margin-right: calc(0.25 * var(--card-margin));
             padding-right: calc(0.25 * var(--card-margin)); /*0.8*var(--card-margin) - */
             scrollbar-width: calc(0.5 * var(--card-margin)); /* Or height: 6px for horizontal */;
@@ -102,7 +102,7 @@ import DictPane from "../components/DictPane.astro";
 
     /* LANDSCAPE ONLY */
     @media (orientation: landscape) {
-        .layout {
+        .content-container {
             height: 100dvh;
         }
     }
