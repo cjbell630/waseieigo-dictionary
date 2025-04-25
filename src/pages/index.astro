@@ -1,11 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SearchResultCard from "../components/SearchResultCard.astro";
 import Logo from "../components/Logo.astro";
 import SearchBar from "../components/SearchBar.astro";
-import DetailsPane from "../components/DetailsPane.astro";
-import SearchResultsPane from "../components/SearchResultsPane.astro";
-import UIButton from "../components/UIButton.astro";
 import DictPane from "../components/DictPane.astro";
 ---
 
@@ -66,6 +62,7 @@ import DictPane from "../components/DictPane.astro";
         header {
             position: sticky;
             top: calc(-1 * var(--logo-height) - var(--logo-margins));
+            background-color: #294958;
         }
 
         /* SCROLLING */
