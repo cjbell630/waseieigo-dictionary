@@ -6,6 +6,7 @@ import SearchBar from "../components/SearchBar.astro";
 import DetailsPane from "../components/DetailsPane.astro";
 import SearchResultsPane from "../components/SearchResultsPane.astro";
 import UIButton from "../components/UIButton.astro";
+import DictPane from "../components/DictPane.astro";
 ---
 
 <Layout>
@@ -16,14 +17,7 @@ import UIButton from "../components/UIButton.astro";
             <span style="flex:1"></span>
             <span style="flex:5"></span>
         </div>
-        <div class="dict-pane">
-            <div class="search-results-pane">
-                <SearchResultsPane/>
-            </div>
-            <div class="details-pane" style="flex:5">
-                <DetailsPane/>
-            </div>
-        </div>
+        <DictPane/>
     </div>
 </Layout>
 
@@ -58,95 +52,12 @@ import UIButton from "../components/UIButton.astro";
         max-width: -webkit-fill-available;
     }
 
-    .dict-pane {
-        display: flex;
-        flex-direction: row;
-        flex: 1; /* Take up remaining space */
-    }
-
-
-    .search-results-pane {
-        display: flex;
-        flex: 4;
-        height: 100%; /* Take up full height of dict-pane */
-        flex-direction: column;
-    }
-
-    /*
-        .dict-pane > div:last-child {
-            flex: 5;
-            overflow: hidden;Prevents it from pushing size
-        }*/
-
-    /* LANDSCAPE ONLY */
-    @media (orientation: landscape) {
-        .dict-pane {
-            overflow-x: hidden; /* Contain scrollable content */
-        }
-
-        .search-results-pane {
-            overflow-y: scroll;
-        }
-
-        .search-results-pane::-webkit-scrollbar {
-            width: 0.75em; /* Or height: 6px for horizontal */
-        }
-
-        .search-results-pane::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .search-results-pane::-webkit-scrollbar-thumb {
-            background-color: rgba(255, 255, 255, 0.18);
-            border-radius: 100px;
-            border: 2px solid transparent; /* creates padding around the dot */
-            background-clip: content-box;
-        }
-    }
-
 
     /* PORTRAIT ONLY */
     @media (orientation: portrait) {
-        .details-pane {
-            max-width: fit-content;
-        }
-
-        .search-results-pane {
-            flex: var(--card-open);
-            display: var(--card-open-word);
-        }
-
         .search-bar-span {
             flex: var(--card-open);
             display: var(--card-open-word);
-        }
-
-        /* SCROLLING */
-        .dict-pane {
-            overflow-y: scroll;
-            overflow-x: hidden;
-            margin-right: calc(0.25 * var(--card-margin));
-            padding-right: calc(0.25 * var(--card-margin)); /*0.8*var(--card-margin) - */
-            scrollbar-width: calc(0.5 * var(--card-margin)); /* Or height: 6px for horizontal */;
-            scrollbar-gutter: stable;
-        }
-
-        .search-results-pane {
-        }
-
-        .dict-pane::-webkit-scrollbar {
-            width: calc(0.5 * var(--card-margin)); /* Or height: 6px for horizontal */
-        }
-
-        .dict-pane::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .dict-pane::-webkit-scrollbar-thumb {
-            background-color: rgba(255, 255, 255, 0.18);
-            border-radius: 100px;
-            border: 2px solid transparent; /* creates padding around the dot */
-            background-clip: content-box;
         }
     }
 
