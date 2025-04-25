@@ -10,13 +10,15 @@ import DictPane from "../components/DictPane.astro";
 ---
 
 <Layout>
-    <div class="main-content">
-        <Logo/>
-        <div class="search-bar-row">
-            <span class="search-bar-span"><SearchBar/></span>
-            <span style="flex:1"></span>
-            <span style="flex:5"></span>
-        </div>
+    <div class="layout">
+        <header>
+            <Logo/>
+            <div class="search-bar-row">
+                <span class="search-bar-span"><SearchBar/></span>
+                <span style="flex:1"></span>
+                <span style="flex:5"></span>
+            </div>
+        </header>
         <DictPane/>
     </div>
 </Layout>
@@ -26,17 +28,18 @@ import DictPane from "../components/DictPane.astro";
         --card-open: 4;
         --card-open-word: "";
         --card-margin: 1rem;
+        --scroll-value: 0;
+        --logo-height: 2.5rem;
+        --logo-margins: 0.5rem;
     }
 
-    html, body {
-        height: 100dvh;
-        overflow: hidden;
-    }
 
-    .main-content {
+    .layout {
         display: flex;
         flex-direction: column;
-        height: inherit;
+    }
+
+    .dict-pane {
     }
 
     .search-bar-row {
@@ -59,6 +62,48 @@ import DictPane from "../components/DictPane.astro";
             flex: var(--card-open);
             display: var(--card-open-word);
         }
+
+        header {
+            position: sticky;
+            top: calc(-1 * var(--logo-height) - var(--logo-margins));
+        }
+
+        /* SCROLLING */
+        html, body {
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+
+        .layout {
+            margin-right: calc(0.25 * var(--card-margin));
+            padding-right: calc(0.25 * var(--card-margin)); /*0.8*var(--card-margin) - */
+            scrollbar-width: calc(0.5 * var(--card-margin)); /* Or height: 6px for horizontal */;
+            scrollbar-gutter: stable;
+        }
+
+        .search-results-pane {
+        }
+
+        body::-webkit-scrollbar {
+            width: calc(0.5 * var(--card-margin)); /* Or height: 6px for horizontal */
+        }
+
+        body::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.18);
+            border-radius: 100px;
+            border: 2px solid transparent; /* creates padding around the dot */
+            background-clip: content-box;
+        }
     }
 
+    /* LANDSCAPE ONLY */
+    @media (orientation: landscape) {
+        .layout {
+            height: 100dvh;
+        }
+    }
 </style>
