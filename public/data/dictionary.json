@@ -355,7 +355,6 @@
             "word": "sand",
             "meaning": "砂"
         },
-        "origins": [],
         "facets": {
             "general": [
                 {
@@ -937,6 +936,325 @@
         ],
         "sources": {
             "Wiktionary - rubber": "https://en.wiktionary.org/wiki/rubber#English"
+        }
+    },
+    "UFOキャッチャー": {
+        "aliases": [],
+        "tags": [
+            "wtf"
+        ],
+        "direct": {
+            "word": "UFO catcher"
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "claw machine"
+                    ]
+                }
+            ]
+        },
+        "related": [],
+        "notes": [],
+        "sources": {
+            "Google Trends": "https://trends.google.com/trends/explore?date=all&q=claw%20machine,claw%20game,crane%20game,UFO%20catcher&hl=en"
+        }
+    },
+    "ホーム-駅": {
+        "aliases": [
+            "プラットホーム"
+        ],
+        "tags": [
+            "wtf",
+            "diff-meaning",
+            "clipping"
+        ],
+        "direct": {
+            "word": "home, form",
+            "meaning": "家, 姿"
+        },
+        "facets": {
+            "駅のホーム": [
+                {
+                    "terms": [
+                        "platform"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/3/38/En-us-platform.ogg"
+                }
+            ]
+        },
+        "related": [
+            "ホーム-サイト"
+        ]
+    },
+    "スーツ": {
+        "tags": [
+            "pronunciation",
+            "tense"
+        ],
+        "origins": [
+            {
+                "source": "suits",
+                "language": ""
+            }
+        ],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "suit",
+                        "suits"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/d/dd/En-us-suit.ogg"
+                }
+            ]
+        },
+        "related": [
+            "スーツケース"
+        ]
+    },
+    "スーツケース": {
+        "tags": [
+            "pronunciation",
+            "tense"
+        ],
+        "direct": {
+            "word": "suitscase"
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "suitcase"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/f/ff/En-us-suitcase.ogg"
+                }
+            ]
+        },
+        "related": [
+            "スーツ",
+            "キャリーバッグ"
+        ]
+    },
+    "キャリーバッグ": {
+        "aliases": [
+            "キャリーバック"
+        ],
+        "tags": [
+            "wtf"
+        ],
+        "direct": {
+            "word": "carry bag",
+            "meaning": "持つ袋"
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "suitcase"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/f/ff/En-us-suitcase.ogg",
+                    "examples": {}
+                }
+            ]
+        },
+        "related": [
+            "スーツケース"
+        ],
+        "notes": [
+            "TODO notes about how it sounds like carry on bag"
+        ]
+    },
+    "バイク": {
+        "tags": [
+            "diff-meaning"
+        ],
+        "direct": {
+            "word": "bike",
+            "meaning": "自転車、バイク"
+        },
+        "facets": {
+            "モーターバイク（原動機付き自転車）": [
+                {
+                    "terms": [
+                        "motorcycle"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/5/56/LL-Q1860_%28eng%29-Wodencafe-motorcycle.wav"
+                },
+                {
+                    "terms": [
+                        "bike"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/d/d5/En-us-bike.ogg"
+                }
+            ]
+        },
+        "related": [
+            "オートバイ"
+        ],
+        "notes": [
+            "notes about how listeners would assume this to be a bicycle unless they had additional context to indicate otherwise"
+        ]
+    },
+    "ゲームセンター": {
+        "aliases": [
+            "ゲーセン"
+        ],
+        "tags": [
+            "possibly"
+        ],
+        "direct": {
+            "word": "game center"
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "arcade"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/0/05/LL-Q1860_%28eng%29-Wodencafe-arcade.wav"
+                }
+            ]
+        },
+        "related": [
+            "アーケード",
+            "ゲームコーナー"
+        ],
+        "notes": [
+            "notes about arcade shopping street, penny arcade"
+        ]
+    },
+    "オープンカー": {
+        "tags": [
+            "wtf"
+        ],
+        "direct": {
+            "word": "open car"
+        },
+        "facets": {
+            "屋根開放が可能な乗用自動車": [
+                {
+                    "terms": [
+                        "convertible"
+                    ]
+                }
+            ]
+        }
+    },
+    "ショベルカー": {
+        "tags": [
+            "possibly"
+        ],
+        "direct": {
+            "word": "shovel car"
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "excavator"
+                    ]
+                }
+            ]
+        }
+    },
+    "パトカー": {
+        "aliases": [
+            "パトロールカー"
+        ],
+        "tags": [
+            "abnormal"
+        ],
+        "origins": [
+            {
+                "source": "patrol car",
+                "language": ""
+            }
+        ],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "police car"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/c/c0/LL-Q1860_%28eng%29-Flame%2C_not_lame-police_car.wav"
+                }
+            ]
+        },
+        "notes": [
+            "TODO info about how patrol car is a specific type of car whose name is not commonly used by civilians"
+        ]
+    },
+    "ワイシャツ": {
+        "aliases": [
+            "ホワイトシャツ"
+        ],
+        "tags": [
+            "wtf"
+        ],
+        "direct": {
+            "word": "Y shirts, white shirts",
+            "meaning": ""
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "dress shirt"
+                    ],
+                    "audio": ""
+                },
+                {
+                    "terms": [
+                        "button-down shirt"
+                    ],
+                    "audio": ""
+                }
+            ]
+        },
+        "related": [
+            "シャツ",
+            "Ｔシャツ"
+        ],
+        "notes": [
+            "regional differences, color info"
+        ],
+        "sources": {}
+    },
+    "Tシャツ": {
+        "aliases": [
+            "ティーシャツ"
+        ],
+        "tags": [
+            "pronunciation",
+            "tense"
+        ],
+        "origins": [
+            {
+                "source": "T shirts",
+                "language": ""
+            }
+        ],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "T shirt"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/6/67/LL-Q1860_%28eng%29-Persent101-T-shirt.wav"
+                }
+            ]
+        },
+        "related": [
+            "ワイシャツ",
+            "シャツ"
+        ],
+        "notes": [
+            "pron info"
+        ],
+        "sources": {
+            "Google Trends": "https://trends.google.com/trends/explore?date=all&q=tshirt,t-shirt,T-shirt,t%20shirt&hl=en"
         }
     }
 }
