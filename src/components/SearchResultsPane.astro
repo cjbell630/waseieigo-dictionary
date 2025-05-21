@@ -28,7 +28,9 @@ import dictionary from "../../public/data/dictionary.json"
             }
 
             window.addEventListener("popstate", (event) => {
-                navigateToCard(event.state?.term ?? "placeholder", false);
+                console.log("popstate, state:");
+                console.log(event.state)
+                navigateToCard(event.state?.term ?? "placeholder", false, event.state?.query, event.state?.scroll);
             });
             /*
             this.addEventListener("onload", (e) => {
