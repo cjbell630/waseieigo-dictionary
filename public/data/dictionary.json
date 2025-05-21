@@ -955,8 +955,9 @@
                 }
             ]
         },
-        "related": [],
-        "notes": [],
+        "related": [
+            "UFO"
+        ],
         "sources": {
             "Google Trends": "https://trends.google.com/trends/explore?date=all&q=claw%20machine,claw%20game,crane%20game,UFO%20catcher&hl=en"
         }
@@ -1255,6 +1256,272 @@
         ],
         "sources": {
             "Google Trends": "https://trends.google.com/trends/explore?date=all&q=tshirt,t-shirt,T-shirt,t%20shirt&hl=en"
+        }
+    },
+    "SNS": {
+        "aliases": [
+        ],
+        "tags": [
+            "wtf",
+            "clipping"
+        ],
+        "direct": {
+            "word": "SNS"
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "social media"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/2/23/LL-Q1860_%28eng%29-Wodencafe-social_media.wav"
+                }
+            ]
+        },
+        "notes": [
+            "TODO \"Social Networking Service\""
+        ]
+    },
+    "ナンバープレート": {
+        "tags": [
+            "regional"
+        ],
+        "origins": [
+            {
+                "source": "number plate",
+                "language": ""
+            }
+        ],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "number plate"
+                    ],
+                    "regions": [
+                        "gb",
+                        "au",
+                        "nz",
+                        "in"
+                    ]
+                },
+                {
+                    "terms": [
+                        "license plate"
+                    ],
+                    "regions": [
+                        "us",
+                        "ca"
+                    ]
+                }
+            ]
+        },
+        "sources": {
+            "Google Trends": "https://trends.google.com/trends/explore?date=all&q=license%20plate,number%20plate,licence%20plate,rego%20plate&hl=en"
+        }
+    },
+    "リュックサック": {
+        "aliases": [
+            "リュック"
+        ],
+        "tags": [
+            "not-en"
+        ],
+        "origins": [
+            {
+                "source": "Rucksack",
+                "language": "de"
+            }
+        ],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "backpack"
+                    ]
+                }
+            ]
+        },
+        "related": [
+            "ランドセル"
+        ]
+    },
+    "マフラー": {
+        "tags": [
+            "diff-meaning"
+        ],
+        "direct": {
+            "word": "muffler",
+            "meaning": "自動車の消音器"
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "scarf"
+                    ]
+                }
+            ]
+        },
+        "notes": [
+            "TODO notes about how muffler is an outdated dialectical term that used to be used in some regions of the UK. ALso consider mentioning the terms stole and ascot"
+        ]
+    },
+    "ディープキス": {
+        "tags": [
+            "wtf"
+        ],
+        "direct": {
+            "word": "deep kiss",
+            "meaning": ""
+        },
+        "facets": {
+            "情熱的な長いキス": [
+                {
+                    "terms": [
+                        "making out"
+                    ]
+                }
+            ],
+            "特に、舌を使ったキス（ベロチュー）": [
+                {
+                    "terms": [
+                        "French kiss"
+                    ]
+                }
+            ]
+        },
+        "notes": [
+            "notes about the conjugation of making out, and how French kiss isnt commonly used, and how making out is often used instead even though it doesn't necessarily involve tongue"
+        ]
+    },
+    "UMA": {
+        "aliases": [
+            "ユーマ"
+        ],
+        "tags": [
+            "wtf"
+        ],
+        "direct": {
+            "word": "UMA",
+            "meaning": ""
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "cryptid"
+                    ]
+                }
+            ]
+        },
+        "related": [
+            "UFO"
+        ],
+        "notes": [
+            "TODO \"Unidentified Mysterious Animal\""
+        ]
+    },
+    "UFO": {
+        "aliases": [
+            "ユーフォー"
+        ],
+        "tags": [
+            "pronunciation"
+        ],
+        "origins": [
+            {
+                "source": "UFO",
+                "language": ""
+            }
+        ],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "UFO"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/5/5d/LL-Q1860_%28eng%29-Persent101-UFO.wav"
+                }
+            ]
+        },
+        "related": [
+            "UMA",
+            "UFOキャッチャー"
+        ]
+    },
+    "トランプ": {
+        "aliases": [
+            "トランプカード",
+            "トランプゲーム"
+        ],
+        "tags": [
+            "wtf",
+            "diff-meaning"
+        ],
+        "direct": {
+            "word": "Trump",
+            "meaning": "トランプ大統領、または秘密の技"
+        },
+        "facets": {
+            "西洋カルタ": [
+                {
+                    "terms": [
+                        "cards"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/3/3b/En-us-cards.ogg"
+                },
+                {
+                    "terms": [
+                        "playing cards"
+                    ]
+                }
+            ]
+        },
+        "notes": [
+            "TODO also means \"切り札\" but only when said as trump card"
+        ]
+    },
+    "トライ＆エラー": {
+        "aliases": [
+            "トライアンドエラー"
+        ],
+        "tags": [
+            "abnormal",
+            "clipping",
+            "pronunciation"
+        ],
+        "direct": {
+            "word": "try and error",
+            "meaning": ""
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "trial and error"
+                    ]
+                }
+            ]
+        }
+    },
+    "ウーパールーパー": {
+        "tags": [
+            "wtf"
+        ],
+        "direct": {
+            "word": "uper looper",
+            "meaning": ""
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "axolotl"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/d/d1/En-us-axolotl.oga"
+                }
+            ]
         }
     }
 }
