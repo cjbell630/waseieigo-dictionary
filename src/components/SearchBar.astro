@@ -15,7 +15,12 @@
     .search-bar {
         display: flex;
         align-items: center;
+        /*margin: calc(1rem - (min(calc(1px*var(--scroll-value)), var(--logo-total-height)))/var(--logo-total-height));*/
         margin: 1rem;
+        /*
+        --new-margin: round(down, calc(1rem - (min(calc(1px * var(--scroll-value)), var(--logo-total-height))) * 0.33), 1rem);
+        margin-top: var(--new-margin);
+        margin-bottom: var(--new-margin);*/
         padding: 0.5em;
         border-radius: 50px;
         border: 4px solid rgba(255, 255, 255, 0.25);
@@ -54,6 +59,7 @@
 
 <script>
     import {convertHiraganaInString, removeFinalConsonants} from "../scripts/japaneseTextCorrection";
+
     class SearchBar extends HTMLElement {
         connectedCallback() {
             let oldValue = "";
@@ -73,7 +79,7 @@
                 } else {
                     let newConverted = convertHiraganaInString(newValue);
                     let newStripped = newConverted;
-                    if(e.isComposing){
+                    if (e.isComposing) {
                         newStripped = removeFinalConsonants(newStripped);
                     }
                     if (oldValue == "") { // first char

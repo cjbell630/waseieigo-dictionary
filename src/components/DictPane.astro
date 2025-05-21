@@ -84,9 +84,9 @@ import SearchResultsPane from "./SearchResultsPane.astro";
 
     class DictPane extends HTMLElement {
         connectedCallback() {
-            this.addEventListener("scroll", (e) => {
-                console.log(this.scrollTop);
-                document.documentElement.style.setProperty("--scroll-value", this.scrollTop);
+            document.body.addEventListener("scroll", (e) => {
+                //console.log(document.body.scrollTop);
+                //document.documentElement.style.setProperty("--scroll-value", document.body.scrollTop);
             });
         }
     }
