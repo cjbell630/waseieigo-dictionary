@@ -1523,5 +1523,343 @@
                 }
             ]
         }
+    },
+    "アイス": {
+        "aliases": [
+            "アイスクリーム"
+        ],
+        "tags": [
+            "possibly",
+            "clipping",
+            "diff-meaning"
+        ],
+        "direct": {
+            "word": "ice",
+            "meaning": "氷"
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "ice cream"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/2/28/En-us-ice_cream.ogg"
+                }
+            ]
+        },
+        "related": [
+            "ソフトクリーム"
+        ]
+    },
+    "ズボン": {
+        "tags": [
+            "not-en"
+        ],
+        "origins": [
+            {
+                "source": "jupon",
+                "language": "fr"
+            }
+        ],
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "pants"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/e/e7/En-us-pants.ogg"
+                }
+            ],
+            "半ズボン": [
+                {
+                    "terms": [
+                        "shorts"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/7/74/En-us-shorts.ogg"
+                }
+            ]
+        },
+        "related": [
+            "ショートパンツ",
+            "ハーフパンツ",
+            "ホットパンツ",
+            "パンツ"
+        ],
+        "notes": [
+            "TODO meaning of pants in UK"
+        ]
+    },
+    "ショートパンツ": {
+        "tags": [
+            "abnormal"
+        ],
+        "direct": {
+            "word": "short pants",
+            "meaning": ""
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "shorts"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/7/74/En-us-shorts.ogg"
+                }
+            ]
+        },
+        "related": [
+            "ズボン",
+            "ハーフパンツ",
+            "ホットパンツ",
+            "パンツ"
+        ]
+    },
+    "ハーフパンツ": {
+        "tags": [
+            "abnormal"
+        ],
+        "direct": {
+            "word": "half pants",
+            "meaning": ""
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "shorts"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/7/74/En-us-shorts.ogg"
+                }
+            ]
+        },
+        "related": [
+            "ショートパンツ",
+            "ズボン",
+            "ホットパンツ",
+            "パンツ"
+        ]
+    },
+    "ラバーカップ": {
+        "tags": [
+            "possibly"
+        ],
+        "direct": {
+            "word": "rubber cup",
+            "meaning": ""
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "toilet plunger"
+                    ]
+                }
+            ]
+        }
+    },
+    "クッキングシート": {
+        "aliases": [],
+        "tags": [
+            "possibly"
+        ],
+        "direct": {
+            "word": "cooking sheet",
+            "meaning": ""
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "parchment paper"
+                    ],
+                    "regions": [
+                        "us",
+                        "ca",
+                        "gb"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/2/2f/LL-Q1860_%28eng%29-Flame%2C_not_lame-parchment_paper.wav"
+                },
+                {
+                    "terms": [
+                        "baking paper"
+                    ],
+                    "regions": [
+                        "au",
+                        "nz",
+                        "gb"
+                    ],
+                    "audio": "https://upload.wikimedia.org/wikipedia/commons/d/d9/LL-Q1860_%28eng%29-Flame%2C_not_lame-baking_paper.wav"
+                }
+            ]
+        },
+        "related": [
+            "キッチンペーパー"
+        ],
+        "sources": {
+            "Google Trends": "https://trends.google.com/trends/explore?date=all&q=parchment%20paper,baking%20paper&hl=en"
+        }
+    },
+    "フリーダイヤル": {
+        "tags": [
+            "possibly"
+        ],
+        "direct": {
+            "word": "free dial",
+            "meaning": "無料入力"
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "toll-free"
+                    ]
+                }
+            ]
+        },
+        "notes": [
+            "TODO other countries; Uk seems to be Freefone and AU seems to be 1800"
+        ]
+    },
+    "シャープペンシル": {
+        "aliases": [
+            "シャーペン"
+        ],
+        "tags": [
+            "wtf"
+        ],
+        "direct": {
+            "word": "sharp pencil",
+            "meaning": "鋭い鉛筆"
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "mechanical pencil"
+                    ]
+                }
+            ]
+        }
+    },
+    "マークシート": {
+        "tags": [
+            "possibly"
+        ],
+        "direct": {
+            "word": "mark sheet",
+            "meaning": ""
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "bubble sheet"
+                    ]
+                },
+                {
+                    "terms": [
+                        "scantron"
+                    ],
+                    "regions": [
+                        "us",
+                        "ca"
+                    ]
+                },
+                {
+                    "terms": [
+                        "OMR sheet"
+                    ],
+                    "regions": [
+                        "in"
+                    ]
+                }
+            ]
+        },
+        "notes": [
+            "TODO scantron is a trademark"
+        ],
+        "sources": {
+            "Google Trends": "https://trends.google.com/trends/explore?date=today%205-y&q=bubble%20sheet,scantron,omr%20sheet&hl=en"
+        }
+    },
+    "MV": {
+        "aliases": [],
+        "tags": [
+            "possibly"
+        ],
+        "direct": {
+            "word": "MV",
+            "meaning": ""
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "music video"
+                    ]
+                }
+            ]
+        }
+    },
+    "バリアフリー": {
+        "tags": [
+            "wtf"
+        ],
+        "direct": {
+            "word": "barrier-free",
+            "meaning": "障害なし"
+        },
+        "facets": {
+            "名詞": [
+                {
+                    "terms": [
+                        "accessibility"
+                    ]
+                }
+            ],
+            "形容詞": [
+                {
+                    "terms": [
+                        "accessible"
+                    ]
+                }
+            ]
+        }
+    },
+    "キャットタワー": {
+        "tags": [
+            "probably"
+        ],
+        "direct": {
+            "word": "cat tower",
+            "meaning": "猫の塔"
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "cat tree"
+                    ]
+                }
+            ]
+        }
+    },
+    "ツインテール": {
+        "tags": [
+            "possibly"
+        ],
+        "direct": {
+            "word": "twin tail",
+            "meaning": "双子の尻尾"
+        },
+        "facets": {
+            "general": [
+                {
+                    "terms": [
+                        "pigtails"
+                    ]
+                }
+            ]
+        }
     }
 }
